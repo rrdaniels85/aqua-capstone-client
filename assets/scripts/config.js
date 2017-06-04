@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://ga-wdi-boston.herokuapp.com'
+    production: 'https://sleepy-dawn-42158.herokuapp.com/'
   }
 }
 
