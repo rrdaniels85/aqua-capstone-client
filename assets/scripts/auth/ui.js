@@ -28,13 +28,41 @@ const signInFailure = () => {
   console.log('sign in failed')
 }
 
+const signOutSuccess = () => {
+  store.user = null
+  $('#signoutmodal').modal('toggle')
+  // $('#content').empty()
+  // $('.nogoals').text('')
+  // $('body').removeClass('modal-open')
+  // $('body').removeClass('modal-open')
+  // $('.modal-backdrop').remove()
+  // $('.sign-in-view').removeClass('hidden')
+  // $('.afterlogin').addClass('hidden')
+  console.log('sign out was successful')
+}
+
+const signOutFailure = () => {
+  console.log('sign out failed')
+}
+
+const changePasswordSuccess = () => {
+  $('#newpasswordmodal').modal('toggle')
+  $('.passworderror').text('')
+  console.log('change password was successful')
+}
+
+const changePasswordFailure = () => {
+  $('.passworderror').text('An error occurred. You may have entered the wrong password. Try again.')
+  console.log('change password failed')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
-  signInFailure
-  // signOutSuccess,
-  // signOutFailure,
-  // changePasswordSuccess,
-  // changePasswordFailure
+  signInFailure,
+  signOutSuccess,
+  signOutFailure,
+  changePasswordSuccess,
+  changePasswordFailure
 }
