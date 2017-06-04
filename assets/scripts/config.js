@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://sleepy-dawn-42158.herokuapp.com/'
+    production: 'https://iaquariummgr.herokuapp.com/'
   }
 }
 
