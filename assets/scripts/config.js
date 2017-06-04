@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://iaquariummgr.herokuapp.com/'
+    production: 'https://myaquamgr.herokuapp.com/'
   }
 }
 
