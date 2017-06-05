@@ -14,7 +14,40 @@
     </head>
     <body class="container-fluid">
 
-    <!-- BEGIN VISITOR PAGE JUMBOTRON -->
+<!-- BEGIN NAV BAR -->
+      <nav class="navbar navbar-default navbar-fixed-top navbar-inverse user-view">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            <div class="navbar-brand brand-title">Aquarium Capstone</div>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="blogActions nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Change Password or Sign Out <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#" data-toggle="modal" id="passwordbutton" data-target="#newpasswordmodal">Change Password</a></li>
+                  <li><a href="#" data-toggle="modal" id="signoutmodbutton" data-target="#signoutmodal">Sign Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+      </nav>
+  <!-- END NAV BAR -->
+
+  <!-- BEGIN VISITOR PAGE JUMBOTRON -->
 <div class="jumbotron splash-jumbo visitor-view">
   <h1 class="display-3 expecto-jumbo-text">Capstone Aquarium App</h1>
   <p class="lead"></p>
@@ -25,17 +58,18 @@
 </div>
 <!-- END JUMBOTRON -->
 
-<!-- CHG PW AND SIGN OUT BUTTONS -->
-<div>
-<button type="button" class="btn btn-primary navbar-right afterlogin" id="signoutmodbutton" data-toggle="modal" data-target="#signoutmodal">
-  Sign Out
-</button>
-  <button type="button" class="btn btn-primary navbar-right afterlogin" id="passwordbutton" data-toggle="modal" data-target="#newpasswordmodal">
-    Change Password
-  </button>
+<!-- TOP HANDLEBARS DIV-->
+<div id="handelbarsone">
 </div>
-  <!-- END BUTTONS -->
+<!-- END TOP HANDLEBARS DIV -->
 
+<!-- BOTTOM HANDLEBARS DIV-->
+<div id="handlebarstwo">
+</div>
+<!-- END BOTTOM HANDLEBARS DIV -->
+
+
+<!-- BEGIN MODALS!! -->
 
 <!-- SIGN UP MODAL -->
   <div class="modal fade" id="signupmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">

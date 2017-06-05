@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store.js')
+const showTanksTitleTemplate = require('../templates/tank-title.handlebars')
 
 const signUpSuccess = (data) => {
   // assign user data in the store
@@ -20,6 +21,8 @@ const signInSuccess = (data) => {
   $('.sign-in-view').addClass('hidden')
   $('.afterlogin').removeClass('hidden')
   $('#signinmodal').modal('toggle')
+  let showTankTitle = showTanksTitleTemplate()
+  $('#handelbarsone').append(showTankTitle)
   console.log('you successfully signed in')
 }
 
