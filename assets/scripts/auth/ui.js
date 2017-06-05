@@ -1,7 +1,9 @@
 'use strict'
 const store = require('../store.js')
 const showTanksTitleTemplate = require('../templates/tank-title.handlebars')
-const listTanksTemplate = require('../templates/list-tanks.handlebars')
+const tankapi = require('../tanks/api.js')
+const tankui = require('../tanks/ui.js')
+const tankevents = require('../tanks/events.js')
 
 const signUpSuccess = (data) => {
   // assign user data in the store
@@ -23,8 +25,10 @@ const signInSuccess = (data) => {
   $('.afterlogin').removeClass('hidden')
   $('#signinmodal').modal('toggle')
   let showTankTitle = showTanksTitleTemplate()
-  // let listTanks = listTanksTemplate()
-  $('#handelbarsone').append(showTankTitle)
+  $('#handlebarsone').append(showTankTitle)
+  tankapi.getTanks()
+    .then(tankui.getTanksSuccess)
+    .catch(tankui.getTanksFailure)
   console.log('you successfully signed in')
 }
 

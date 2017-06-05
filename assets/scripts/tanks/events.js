@@ -16,6 +16,13 @@ const onCreateTank = function (event) {
     .catch(ui.createTankFailure)
 }
 
+const getTanks = function () {
+  // send request to API to get goals without an event trigger
+  api.getTanks()
+    .then(ui.getTanksSuccess)
+    .catch(ui.getTanksFailure)
+}
+
 const tankHandlers = () => {
   $(document).on('submit', '#create-tank', onCreateTank)
   // $('.get-goals').on('click', onGetGoals)
@@ -25,5 +32,6 @@ const tankHandlers = () => {
 
 module.exports = {
   tankHandlers,
-  onCreateTank
+  onCreateTank,
+  getTanks
 }
