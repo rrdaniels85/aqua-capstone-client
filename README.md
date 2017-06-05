@@ -14,8 +14,9 @@ Install with `npm install`.
 
 ## Wireframes
 
-Click Link Below to See Wireframes
-[Wireframes](http://imgur.com/a/OL7fT)
+![alt text](http://i.imgur.com/HsYPU1J.jpg)
+![alt text](http://i.imgur.com/jWik1uf.jpg)
+![alt text](http://i.imgur.com/T753CCz.jpg)
 
 ## User Stories
 MAIN
