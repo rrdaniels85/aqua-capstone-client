@@ -2,8 +2,6 @@
 
 # Aquarium App
 
-This application is targeted at aquarium enthusiasts. It allows them, after signing in, to create multiple tanks with attributes. The user can then keep an inventory of the animals that they keep in their tanks (ex. fish, snails, etc.).
-
 
 ## Dependencies
 
@@ -15,9 +13,7 @@ Install with `npm install`.
 
 ## Wireframes
 
-![alt text](http://i.imgur.com/HsYPU1J.jpg)
-![alt text](http://i.imgur.com/jWik1uf.jpg)
-![alt text](http://i.imgur.com/T753CCz.jpg)
+
 
 ## User Stories
 MAIN
