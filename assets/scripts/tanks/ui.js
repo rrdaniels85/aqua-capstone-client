@@ -37,11 +37,26 @@ const updateTankFailure = () => {
   console.log('update tank failed')
 }
 
+const deleteTankSuccess = (data) => {
+  $('#removetankmodal' + data).modal('toggle')
+  // $('#content').empty()
+  // $('body').removeClass('modal-open')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
+  console.log('you successfully deleted that tank! :)')
+}
+
+const deleteTankFailure = () => {
+  console.log('delete tank failed')
+}
+
 module.exports = {
   createTankSuccess,
   createTankFailure,
   getTanksSuccess,
   getTanksFailure,
   updateTankSuccess,
-  updateTankFailure
+  updateTankFailure,
+  deleteTankSuccess,
+  deleteTankFailure
 }

@@ -36,10 +36,21 @@ const onUpdateTank = function (event) {
       .catch(ui.updateTankFailure)
 }
 
+const onDeleteTank = function () {
+  // prevent screen from refreshing
+  event.preventDefault()
+  // assign data value to be equal to the data-id of the item user wants to remove
+  let data = $(this).attr('data-id')
+  // pass data in delete request to api to delete item associated with ID
+  api.deleteTank(data)
+    .done(ui.deleteTankSuccess)
+    .catch(ui.deleteTankFailure)
+}
+
 const tankHandlers = () => {
   $(document).on('submit', '#create-tank', onCreateTank)
   // $('.get-goals').on('click', onGetGoals)
-  // $(document).on('submit', '.remove-goal', onDeleteGoal)
+  $(document).on('submit', '.remove-tank', onDeleteTank)
   $(document).on('submit', '.update-tank', onUpdateTank)
 }
 
