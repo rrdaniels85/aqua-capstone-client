@@ -2,6 +2,7 @@
 
 # Aquarium App
 
+This is my aquarium management app for capstone.
 
 ## Dependencies
 
@@ -13,7 +14,9 @@ Install with `npm install`.
 
 ## Wireframes
 
-
+![alt text](http://i.imgur.com/HsYPU1J.jpg)
+![alt text](http://i.imgur.com/jWik1uf.jpg)
+![alt text](http://i.imgur.com/T753CCz.jpg)
 
 ## User Stories
 MAIN
