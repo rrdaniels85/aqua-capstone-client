@@ -23,15 +23,29 @@ const getTanks = function () {
     .catch(ui.getTanksFailure)
 }
 
+const onUpdateTank = function (event) {
+  // prevent screen from refreshing
+  event.preventDefault()
+  // assign data to be what user entered in form fields
+  const data = getFormFields(this)
+  // assign data-id of item to the variable tankId
+  const tankId = $(this).attr('data-id')
+    // pass goalID to the API Patch request for item
+  api.updateTank(tankId, data)
+      .done(ui.updateTankSuccess)
+      .catch(ui.updateTankFailure)
+}
+
 const tankHandlers = () => {
   $(document).on('submit', '#create-tank', onCreateTank)
   // $('.get-goals').on('click', onGetGoals)
   // $(document).on('submit', '.remove-goal', onDeleteGoal)
-  // $(document).on('submit', '.update-goal', onUpdateGoal)
+  $(document).on('submit', '.update-tank', onUpdateTank)
 }
 
 module.exports = {
   tankHandlers,
   onCreateTank,
-  getTanks
+  getTanks,
+  onUpdateTank
 }

@@ -25,9 +25,23 @@ const getTanksFailure = () => {
   console.log('get tanks failed')
 }
 
+const updateTankSuccess = (data) => {
+  $('#updatetankmodal' + data).modal('toggle')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
+  console.log('update tank worked')
+}
+
+const updateTankFailure = () => {
+  // $('.updateerror').text('An error occurred. You must fill in all fields in order to update an item.')
+  console.log('update tank failed')
+}
+
 module.exports = {
   createTankSuccess,
   createTankFailure,
   getTanksSuccess,
-  getTanksFailure
+  getTanksFailure,
+  updateTankSuccess,
+  updateTankFailure
 }
