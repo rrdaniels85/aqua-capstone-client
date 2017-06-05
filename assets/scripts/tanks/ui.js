@@ -2,6 +2,7 @@
 const store = require('../store.js')
 const api = require('./api.js')
 const listTanksTemplate = require('../templates/list-tanks.handlebars')
+const showOneTankTemplate = require('../templates/show-one-tank.handlebars')
 
 const createTankSuccess = (data) => {
   $('#createtankmodal').modal('toggle')
@@ -50,6 +51,18 @@ const deleteTankFailure = () => {
   console.log('delete tank failed')
 }
 
+const getOneTankSuccess = (data) => {
+  console.log('tank success for one')
+  console.log(data)
+  $('#handlebarsone').empty()
+  const showOneTank = showOneTankTemplate({ tank: data.tank })
+  $('#handlebarsone').append(showOneTank)
+}
+
+const getOneTankFailure = () => {
+  console.log('get tank failed')
+}
+
 module.exports = {
   createTankSuccess,
   createTankFailure,
@@ -58,5 +71,7 @@ module.exports = {
   updateTankSuccess,
   updateTankFailure,
   deleteTankSuccess,
-  deleteTankFailure
+  deleteTankFailure,
+  getOneTankSuccess,
+  getOneTankFailure
 }

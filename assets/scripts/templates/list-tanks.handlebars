@@ -7,6 +7,7 @@
     {{#if tank.name}}
       <ul class="list-unstyled"><li data-id="{{tank.id}}">Water Type: {{tank.water}}</li>
         <li>
+          <button type="button" data-id="{{tank.id}}" class="btn btn-default handle manage-tank">Manage Tank</button>
           <button type="button" class="update btn btn-primary handle" data-toggle="modal" data-target="#updatetankmodal{{tank.id}}">Update Tank</button>
           <button type="button" class="remove btn btn-default handle" data-toggle="modal" data-target="#removetankmodal{{tank.id}}">Remove Tank</button>
         </li>
