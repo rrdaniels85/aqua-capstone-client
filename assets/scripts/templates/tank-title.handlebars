@@ -1,3 +1,32 @@
+<div id="tank-title">
 <h1>Welcome!</h1>
 <h2>Your Tanks</h2>
-<button id="createtank">Create a Tank</button>
+  <button type="button" class="btn btn-large btn-success afterlogin" id="createtankbutton" data-toggle="modal" data-target="#createtankmodal">
+    Create a New Tank!
+  </button>
+
+  <!-- ADD TANK MODAL-->
+  <div class="modal fade" id="createtankmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add a New Tank</h5>
+      </div>
+      <div class="modal-body">
+  <form id="create-tank">
+  <fieldset>
+    <legend>Create New Tank</legend>
+      <input name="tank[name]" type="text" id="create-tank-name" placeholder="Tank Name">
+      <input name="tank[water]" type="text" id="create-tank-water" placeholder="Tank's Water Type">
+      <input type="submit" name="submit" value="Create New Tank">
+  </fieldset>
+  </form>
+  </div>
+  <div class="modal-footer">
+  <div class="createerror"></div>
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>

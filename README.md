@@ -2,7 +2,6 @@
 
 # Aquarium App
 
-This is my aquarium management app for capstone.
 
 ## Dependencies
 
@@ -14,8 +13,7 @@ Install with `npm install`.
 
 ## Wireframes
 
-Click Link Below to See Wireframes
-[Wireframes](http://imgur.com/a/OL7fT)
+
 
 ## User Stories
 MAIN
@@ -29,6 +27,7 @@ MAIN
 8) As a user, I want to be able to see what animals are inside my tanks so that I know what the inventory is.
 9) As a user, if I am looking at the animals in a tank, I want to be able to return to the page with all my tanks so that I can look at other tanks if I so desire.
 10) As a user, when I delete a tank, I want all the animals in the tank to be deleted so that they do not remain associated with me.
+
 STRETCH OBJECTIVE USER STORIES:
 11) As a user, I want to be able to add maintenance logs/notes about my tank and the animals in it so that I can track my activities and the animals in the tank.
 12) As a user, I want to be able to delete and update my maintenace logs/notes on my tanks so I can alter them if I so choose.
