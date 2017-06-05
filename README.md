@@ -33,7 +33,7 @@ MAIN
 
 STRETCH OBJECTIVE USER STORIES:
 11) As a user, I want to be able to add maintenance logs/notes about my tank and the animals in it so that I can track my activities and the animals in the tank.
-12) As a user, I want to be able to delete and update my maintenace logs/notes on my tanks so I can alter them if I so choose.
+12) As a user, I want to be able to delete and update my maintenace logs/notes on my tanks so I can alter them if I so choose.  
 
 ## [License](LICENSE)
 
