@@ -37,7 +37,7 @@ const updateTankSuccess = (data) => {
 }
 
 const updateTankFailure = () => {
-  // $('.updateerror').text('An error occurred. You must fill in all fields in order to update an item.')
+  $('.updateerror').text('An error occurred. You must complete all fields in order to update a tank.')
   console.log('update tank failed')
 }
 

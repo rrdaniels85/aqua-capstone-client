@@ -26,7 +26,14 @@
               <form class="update-tank" data-id="{{tank.id}}">
               <fieldset>
                 <input type='text' name='tank[name]' id ='updateName' placeholder="Updated Name">
-                <input type='text' name='tank[water]' id ='updateWater' placeholder="Updated Water Type">
+                <select name="tank[water]">
+                  {{#dropdown tank.water}}
+                  <option disabled value>--Choose a Water Type (Required)--</option>
+                  <option value="Fresh">Fresh</option>
+                  <option value="Salt">Salt</option>
+                  {{/dropdown}}
+                  <br>
+                </select>
                 <input data-id="{{tank.id}}" type="submit" name="submit" value="Update Tank">
             </fieldset>
             </form>

@@ -1,0 +1,70 @@
+{{#each animals as |animal|}}
+
+  <!-- Don't uncomment yet -->
+
+  <h1 class ="text-center" data-id="{{animal.id}}"> <small>{{animal.name}}</small></h1>
+  <div class="text-center">
+    {{#if animal.name}}
+      <ul class="list-unstyled">
+        <li data-id="{{animal.id}}">Species: {{animal.species}}</li>
+        <li data-id="{{animal.id}}">Color: {{animal.color}}</li>
+        <li>
+          <button type="button" class="update btn btn-primary handle" data-toggle="modal" data-target="#updateanimalmodal{{animal.id}}">Update Animal</button>
+          <button type="button" class="remove btn btn-default handle" data-toggle="modal" data-target="#removeanimalmodal{{animal.id}}">Delete Animal</button>
+        </li>
+      </ul>
+      <div class="modal fade" id="updateanimalmodal{{animal.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Update Tank Information</h5>
+            </div>
+            <div class="modal-body">
+              <p>{{animal.name}}<br>
+                 Species: {{animal.species}}<br>
+                 Color: {{animal.color}}
+               </p>
+               <p>*You must fill in all fields in order to update an animal</p>
+              <form class="update-animal" data-id="{{animal.id}}">
+              <fieldset>
+                <input type='text' name='animal[name]' id ='updateName' placeholder="Updated Name">
+                <input type='text' name='animal[species]' id ='updateSpecies' placeholder="Updated Species">
+                <input type='text' name='animal[color]' id ='updateColor' placeholder="Updated Color">
+                  <br>
+                <input data-id="{{animal.id}}" type="submit" name="submit" value="Update Tank">
+            </fieldset>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <div class="updateerror"></div>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="removeanimalmodal{{animal.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Are you sure you want to delete animal?</h5>
+            </div>
+            <div class="modal-body">
+              <form class="remove-animal" data-id="{{animal.id}}">
+                <fieldset>
+                  <legend>{{animal.name}}</legend>
+                  <input type="submit" name="submit" value="Remove Tank">
+                </fieldset>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <div class="passworderror"></div>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    {{/if}}
+  </div>
+{{/each}}

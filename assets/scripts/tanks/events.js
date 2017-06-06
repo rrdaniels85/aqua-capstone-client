@@ -12,9 +12,8 @@ const onCreateTank = function (event) {
   // assign form field inputs to variable data
   const data = getFormFields(this)
   api.createTank(data)
-    .done(ui.createTankSuccess)
+    .done(ui.createTankSuccess, getTanks)
     .catch(ui.createTankFailure)
-    .done(getTanks)
 }
 
 const getTanks = function () {
@@ -33,9 +32,8 @@ const onUpdateTank = function (event) {
   const tankId = $(this).attr('data-id')
     // pass goalID to the API Patch request for item
   api.updateTank(tankId, data)
-      .then(ui.updateTankSuccess)
+      .done(ui.updateTankSuccess, getTanks)
       .catch(ui.updateTankFailure)
-      .done(getTanks)
 }
 
 const onDeleteTank = function () {
