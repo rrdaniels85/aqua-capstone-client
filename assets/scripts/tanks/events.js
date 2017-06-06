@@ -32,9 +32,8 @@ const onUpdateTank = function (event) {
   const tankId = $(this).attr('data-id')
     // pass goalID to the API Patch request for item
   api.updateTank(tankId, data)
-      .then(ui.updateTankSuccess)
+      .done(ui.updateTankSuccess, getTanks)
       .catch(ui.updateTankFailure)
-      .done(getTanks)
 }
 
 const onDeleteTank = function () {
