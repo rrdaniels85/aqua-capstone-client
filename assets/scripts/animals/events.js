@@ -5,25 +5,25 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
 
-const onCreateTank = function (event) {
+const onCreateAnimal = function (event) {
   console.log('yo')
   // prevent screen from refreshing
   event.preventDefault()
   // assign form field inputs to variable data
   const data = getFormFields(this)
-  api.createTank(data)
-    .done(ui.createTankSuccess, getTanks)
-    .catch(ui.createTankFailure)
+  api.createAnimal(data)
+    .done(ui.createAnimalSuccess, getAnimals)
+    .catch(ui.createAnimalFailure)
 }
 
-const getTanks = function () {
+const getAnimals = function () {
   // send request to API to get goals without an event trigger
-  api.getTanks()
-    .then(ui.getTanksSuccess)
-    .catch(ui.getTanksFailure)
+  api.getAnimals()
+    .then(ui.getAnimalsSuccess)
+    .catch(ui.getAnimalsFailure)
 }
 
-const onUpdateTank = function (event) {
+const onUpdateAnimal = function (event) {
   // prevent screen from refreshing
   event.preventDefault()
   // assign data to be what user entered in form fields
@@ -31,46 +31,32 @@ const onUpdateTank = function (event) {
   // assign data-id of item to the variable tankId
   const tankId = $(this).attr('data-id')
     // pass goalID to the API Patch request for item
-  api.updateTank(tankId, data)
-      .done(ui.updateTankSuccess, getTanks)
-      .catch(ui.updateTankFailure)
+  api.updateAnimal(tankId, data)
+      .done(ui.updateAnimalSuccess, getAnimals)
+      .catch(ui.updateAnimalFailure)
 }
 
-const onDeleteTank = function () {
+const onDeleteAnimal = function () {
   // prevent screen from refreshing
   event.preventDefault()
   // assign data value to be equal to the data-id of the item user wants to remove
   const data = $(this).attr('data-id')
   // pass data in delete request to api to delete item associated with ID
-  api.deleteTank(data)
-    .done(ui.deleteTankSuccess)
-    .catch(ui.deleteTankFailure)
-    .done(getTanks)
-}
-
-const onShowOneTank = function () {
-  // prevent screen from refreshing
-  event.preventDefault()
-  // assign data value to be equal to the data-id of the item user wants to remove
-  const tankId = $(this).attr('data-id')
-  // pass data in delete request to api to delete item associated with ID
-  api.getOneTank(tankId)
-    .done(ui.getOneTankSuccess)
-    .catch(ui.getOneTankFailure)
+  api.deleteAnimal(data)
+    .done(ui.deleteAnimalSuccess, getAnimals)
+    .catch(ui.deleteAnimalFailure)
 }
 
 const tankHandlers = () => {
-  $(document).on('submit', '#create-tank', onCreateTank)
-  $(document).on('click', '.manage-tank', onShowOneTank)
-  $(document).on('submit', '.remove-tank', onDeleteTank)
-  $(document).on('submit', '.update-tank', onUpdateTank)
-  $(document).on('click', '#show-all-tanks', getTanks)
+  $(document).on('submit', '#create-tank', onCreateAnimal)
+  $(document).on('submit', '.remove-tank', onDeleteAnimal)
+  $(document).on('submit', '.update-tank', onUpdateAnimal)
+  $(document).on('click', '#show-all-tanks', getAnimals)
 }
 
 module.exports = {
   tankHandlers,
-  onCreateTank,
-  getTanks,
-  onUpdateTank,
-  onShowOneTank
+  onCreateAnimal,
+  getAnimals,
+  onUpdateAnimal
 }
