@@ -9,20 +9,20 @@ const createAnimalSuccess = (data) => {
   $('#createtankmodal').modal('toggle')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
-  console.log('you successfully created a tank')
+  console.log('you successfully created an animal')
 }
 
 const createAnimalFailure = () => {
-  $('.createerror').text('An error occurred. You must fill in all fields in order to create a new item.')
-  console.log('create tank failed')
+  $('.createerror').text('An error occurred. You must fill in all fields in order to create an animal.')
+  console.log('create animal failed')
 }
 
 const getAnimalsSuccess = (data) => {
-  console.log('list tanks ran before template')
-  let showAnimalTitle = showAnimalsTitleTemplate()
-  $('#handlebarsone').html(showAnimalTitle)
-  const listAnimals = listAnimalsTemplate({ tanks: data.tanks })
-  $('#handlebarstwo').html(listAnimals)
+  console.log('list animals ran')
+  // let showAnimalTitle = showAnimalsTitleTemplate()
+  // $('#handlebarsone').html(showAnimalTitle)
+  // const listAnimals = listAnimalsTemplate({ tanks: data.tanks })
+  // $('#handlebarstwo').html(listAnimals)
 }
 
 const getAnimalsFailure = () => {

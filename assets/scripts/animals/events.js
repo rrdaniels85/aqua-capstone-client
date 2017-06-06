@@ -11,14 +11,18 @@ const onCreateAnimal = function (event) {
   event.preventDefault()
   // assign form field inputs to variable data
   const data = getFormFields(this)
-  api.createAnimal(data)
-    .done(ui.createAnimalSuccess, getAnimals)
+  const tankId = $(event.target).attr('data-id')
+  console.log(data)
+  console.log(tankId)
+  api.createAnimal(tankId, data)
+    .then(ui.createAnimalSuccess)
     .catch(ui.createAnimalFailure)
+    .done(getAnimals(tankId))
 }
 
-const getAnimals = function () {
+const getAnimals = function (tankId) {
   // send request to API to get goals without an event trigger
-  api.getAnimals()
+  api.getAnimals(tankId)
     .then(ui.getAnimalsSuccess)
     .catch(ui.getAnimalsFailure)
 }
@@ -47,15 +51,15 @@ const onDeleteAnimal = function () {
     .catch(ui.deleteAnimalFailure)
 }
 
-const tankHandlers = () => {
-  $(document).on('submit', '#create-tank', onCreateAnimal)
-  $(document).on('submit', '.remove-tank', onDeleteAnimal)
-  $(document).on('submit', '.update-tank', onUpdateAnimal)
-  $(document).on('click', '#show-all-tanks', getAnimals)
+const animalHandlers = () => {
+  $(document).on('submit', '#create-animal', onCreateAnimal)
+  // $(document).on('submit', '.remove-tank', onDeleteAnimal)
+  // $(document).on('submit', '.update-tank', onUpdateAnimal)
+  // $(document).on('click', '#show-all-tanks', getAnimals)
 }
 
 module.exports = {
-  tankHandlers,
+  animalHandlers,
   onCreateAnimal,
   getAnimals,
   onUpdateAnimal
