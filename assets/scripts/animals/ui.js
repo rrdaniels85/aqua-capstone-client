@@ -1,14 +1,17 @@
 'use strict'
 const store = require('../store.js')
 const api = require('./api.js')
+const ui = require('./ui.js')
 const listAnimalsTemplate = require('../templates/list-animals.handlebars')
 
 const createAnimalSuccess = (data) => {
+  console.log('create animal data is', data)
   $('#createanimalmodal').modal('toggle')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
-  console.log('you successfully created an animal')
-  console.log('tank id after creat is', data)
+  api.getAnimals(data)
+  .then(getAnimalsSuccess)
+  .catch(getAnimalsFailure)
 }
 
 const createAnimalFailure = () => {
@@ -19,7 +22,8 @@ const createAnimalFailure = () => {
 const getAnimalsSuccess = (data) => {
   console.log('list animals ran')
   console.log('animal data list is', data)
-  let listAnimals = listAnimalsTemplate({ animals: data.animals })
+  console.log('tank is', data.animals[0].tank.id)
+  const listAnimals = listAnimalsTemplate({ animals: data.animals })
   $('#handlebarstwo').html(listAnimals)
   // const listAnimals = listAnimalsTemplate({ tanks: data.tanks })
   // $('#handlebarstwo').html(listAnimals)
@@ -30,7 +34,7 @@ const getAnimalsFailure = () => {
 }
 
 const updateAnimalSuccess = (data) => {
-  $('#updatetankmodal' + data).modal('toggle')
+  // $('#updateanimalmodal' + data).modal('toggle')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   console.log('update tank worked')
