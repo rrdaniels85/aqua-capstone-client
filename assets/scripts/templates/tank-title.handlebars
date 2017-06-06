@@ -17,7 +17,12 @@
   <fieldset>
     <legend>Create New Tank</legend>
       <input name="tank[name]" type="text" id="create-tank-name" placeholder="Tank Name">
-      <input name="tank[water]" type="text" id="create-tank-water" placeholder="Tank's Water Type">
+      <select name="tank[water]">
+        <option disabled selected value>--Choose a Water Type (Required)--</option>
+        <option value="fresh">Fresh</option>
+        <option value="salt">Salt</option>
+        <br>
+      </select>
       <input type="submit" name="submit" value="Create New Tank">
   </fieldset>
   </form>
