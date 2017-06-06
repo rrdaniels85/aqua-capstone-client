@@ -55,6 +55,7 @@ const getOneTankSuccess = (data) => {
   console.log('tank success for one')
   console.log(data)
   $('#handlebarsone').empty()
+  $('#handlebarstwo').empty()
   const showOneTank = showOneTankTemplate({ tank: data.tank })
   $('#handlebarsone').html(showOneTank)
 }

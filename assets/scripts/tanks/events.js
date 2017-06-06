@@ -64,7 +64,6 @@ const onShowOneTank = function () {
 const tankHandlers = () => {
   $(document).on('submit', '#create-tank', onCreateTank)
   $(document).on('click', '.manage-tank', onShowOneTank)
-  // $('.get-goals').on('click', onGetGoals)
   $(document).on('submit', '.remove-tank', onDeleteTank)
   $(document).on('submit', '.update-tank', onUpdateTank)
 }
