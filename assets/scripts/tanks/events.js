@@ -14,6 +14,7 @@ const onCreateTank = function (event) {
   api.createTank(data)
     .done(ui.createTankSuccess)
     .catch(ui.createTankFailure)
+    .done(getTanks)
 }
 
 const getTanks = function () {
@@ -32,19 +33,21 @@ const onUpdateTank = function (event) {
   const tankId = $(this).attr('data-id')
     // pass goalID to the API Patch request for item
   api.updateTank(tankId, data)
-      .done(ui.updateTankSuccess)
+      .then(ui.updateTankSuccess)
       .catch(ui.updateTankFailure)
+      .done(getTanks)
 }
 
 const onDeleteTank = function () {
   // prevent screen from refreshing
   event.preventDefault()
   // assign data value to be equal to the data-id of the item user wants to remove
-  let data = $(this).attr('data-id')
+  const data = $(this).attr('data-id')
   // pass data in delete request to api to delete item associated with ID
   api.deleteTank(data)
     .done(ui.deleteTankSuccess)
     .catch(ui.deleteTankFailure)
+    .done(getTanks)
 }
 
 const onShowOneTank = function () {

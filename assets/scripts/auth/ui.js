@@ -22,7 +22,7 @@ const signUpFailure = () => {
 const signInSuccess = (data) => {
   store.user = data.user
   $('.visitor-view').addClass('hidden')
-  $('.afterlogin').removeClass('hidden')
+  $('.user-view').removeClass('hidden')
   $('#signinmodal').modal('toggle')
   let showTankTitle = showTanksTitleTemplate()
   $('#handlebarsone').append(showTankTitle)
@@ -41,12 +41,12 @@ const signOutSuccess = () => {
   store.user = null
   $('#signoutmodal').modal('toggle')
   $('.visitor-view').removeClass('hidden')
-  // $('#content').empty()
-  // $('.nogoals').text('')
+  $('#handlebarsone').empty()
+  $('#handlebarstwo').empty()
   // $('body').removeClass('modal-open')
   // $('body').removeClass('modal-open')
   // $('.modal-backdrop').remove()
-  // $('.sign-in-view').removeClass('hidden')
+  $('.user-view').addClass('hidden')
   // $('.afterlogin').addClass('hidden')
   console.log('sign out was successful')
 }
