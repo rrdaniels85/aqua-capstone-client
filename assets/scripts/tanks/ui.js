@@ -4,6 +4,7 @@ const api = require('./api.js')
 const listTanksTemplate = require('../templates/list-tanks.handlebars')
 const showOneTankTemplate = require('../templates/show-one-tank.handlebars')
 const showTanksTitleTemplate = require('../templates/tank-title.handlebars')
+const listAnimalsTemplate = require('../templates/list-animals.handlebars')
 
 const createTankSuccess = (data) => {
   $('#createtankmodal').modal('toggle')

@@ -4,6 +4,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
+const eventsAnimals = require('../animals/events')
 
 const onCreateTank = function (event) {
   console.log('yo')
@@ -55,7 +56,8 @@ const onShowOneTank = function () {
   const tankId = $(this).attr('data-id')
   // pass data in delete request to api to delete item associated with ID
   api.getOneTank(tankId)
-    .done(ui.getOneTankSuccess)
+    .then(ui.getOneTankSuccess(tankId))
+    .done(eventsAnimals.getAnimals(tankId))
     .catch(ui.getOneTankFailure)
 }
 
