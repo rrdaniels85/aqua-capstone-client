@@ -1,6 +1,6 @@
 'use strict'
 const store = require('../store.js')
-const showTanksTitleTemplate = require('../templates/tank-title.handlebars')
+// const showTanksTitleTemplate = require('../templates/tank-title.handlebars')
 const tankapi = require('../tanks/api.js')
 const tankui = require('../tanks/ui.js')
 const tankevents = require('../tanks/events.js')
@@ -24,8 +24,6 @@ const signInSuccess = (data) => {
   $('.visitor-view').addClass('hidden')
   $('.user-view').removeClass('hidden')
   $('#signinmodal').modal('toggle')
-  let showTankTitle = showTanksTitleTemplate()
-  $('#handlebarsone').append(showTankTitle)
   tankapi.getTanks()
     .then(tankui.getTanksSuccess)
     .catch(tankui.getTanksFailure)
