@@ -1,6 +1,6 @@
 'use strict'
 const store = require('../store.js')
-const showTanksTitleTemplate = require('../templates/tank-title.handlebars')
+// const showTanksTitleTemplate = require('../templates/tank-title.handlebars')
 const tankapi = require('../tanks/api.js')
 const tankui = require('../tanks/ui.js')
 const tankevents = require('../tanks/events.js')
@@ -21,11 +21,9 @@ const signUpFailure = () => {
 
 const signInSuccess = (data) => {
   store.user = data.user
-  $('.sign-in-view').addClass('hidden')
-  $('.afterlogin').removeClass('hidden')
+  $('.visitor-view').addClass('hidden')
+  $('.user-view').removeClass('hidden')
   $('#signinmodal').modal('toggle')
-  let showTankTitle = showTanksTitleTemplate()
-  $('#handlebarsone').append(showTankTitle)
   tankapi.getTanks()
     .then(tankui.getTanksSuccess)
     .catch(tankui.getTanksFailure)
@@ -40,12 +38,13 @@ const signInFailure = () => {
 const signOutSuccess = () => {
   store.user = null
   $('#signoutmodal').modal('toggle')
-  // $('#content').empty()
-  // $('.nogoals').text('')
+  $('.visitor-view').removeClass('hidden')
+  $('#handlebarsone').empty()
+  $('#handlebarstwo').empty()
   // $('body').removeClass('modal-open')
   // $('body').removeClass('modal-open')
   // $('.modal-backdrop').remove()
-  // $('.sign-in-view').removeClass('hidden')
+  $('.user-view').addClass('hidden')
   // $('.afterlogin').addClass('hidden')
   console.log('sign out was successful')
 }

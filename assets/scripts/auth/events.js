@@ -6,6 +6,7 @@ const api = require('./api')
 const ui = require('./ui')
 
 const onSignUp = function (event) {
+  // prevent page refresh
   event.preventDefault()
   const data = getFormFields(this)
   api.signUp(data)
@@ -14,6 +15,7 @@ const onSignUp = function (event) {
 }
 
 const onSignIn = function (event) {
+  // prevent page refresh
   event.preventDefault()
   const data = getFormFields(this)
   api.signIn(data)
@@ -22,6 +24,7 @@ const onSignIn = function (event) {
 }
 
 const onSignOut = function (event) {
+  // prevent page refresh
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
