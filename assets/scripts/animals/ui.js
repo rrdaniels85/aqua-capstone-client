@@ -1,15 +1,14 @@
 'use strict'
 const store = require('../store.js')
 const api = require('./api.js')
-const listAnimalsTemplate = require('../templates/list-tanks.handlebars')
-const showOneAnimalTemplate = require('../templates/show-one-tank.handlebars')
-const showAnimalsTitleTemplate = require('../templates/tank-title.handlebars')
+const listAnimalsTemplate = require('../templates/list-animals.handlebars')
 
 const createAnimalSuccess = (data) => {
-  $('#createtankmodal').modal('toggle')
+  $('#createanimalmodal').modal('toggle')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   console.log('you successfully created an animal')
+  console.log('tank id after creat is', data)
 }
 
 const createAnimalFailure = () => {
@@ -19,14 +18,15 @@ const createAnimalFailure = () => {
 
 const getAnimalsSuccess = (data) => {
   console.log('list animals ran')
-  // let showAnimalTitle = showAnimalsTitleTemplate()
-  // $('#handlebarsone').html(showAnimalTitle)
+  console.log('animal data list is', data)
+  let listAnimals = listAnimalsTemplate({ animals: data.animals })
+  $('#handlebarstwo').html(listAnimals)
   // const listAnimals = listAnimalsTemplate({ tanks: data.tanks })
   // $('#handlebarstwo').html(listAnimals)
 }
 
 const getAnimalsFailure = () => {
-  console.log('get tanks failed')
+  console.log('get animals failed')
 }
 
 const updateAnimalSuccess = (data) => {

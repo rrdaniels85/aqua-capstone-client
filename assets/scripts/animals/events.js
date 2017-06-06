@@ -15,9 +15,8 @@ const onCreateAnimal = function (event) {
   console.log(data)
   console.log(tankId)
   api.createAnimal(tankId, data)
-    .then(ui.createAnimalSuccess)
+    .done(ui.createAnimalSuccess(tankId), getAnimals(tankId))
     .catch(ui.createAnimalFailure)
-    .done(getAnimals(tankId))
 }
 
 const getAnimals = function (tankId) {
