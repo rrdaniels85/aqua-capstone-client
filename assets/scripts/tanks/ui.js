@@ -36,6 +36,8 @@ const updateTankSuccess = (data) => {
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   console.log('update tank worked')
+  const events = require('./events.js')
+  events.refreshOneTank()
 }
 
 const updateTankFailure = () => {
