@@ -1,13 +1,14 @@
-<div class="single-tank-view">
+<div class="single-tank-view tank-style">
+  <br>
 <h1> Aquarium Name: {{tank.name}}</h1>
 <h2>Water Type: {{tank.water}}</h2>
-<button id="show-all-tanks">Return to List of My Aquariums</button>
 <button type="button" class="btn btn-large btn-success" id="createanimalbutton" data-toggle="modal" data-target="#createanimalmodal">
     Add Animal to this Aquarium!
   </button>
-  <button type="button" class="update btn btn-primary handl update-tank-button" data-toggle="modal" data-target="#updatetankmodal{{tank.id}}">Update Aquarium</button>
-  <button type="button" class="remove btn btn-default handle" data-toggle="modal" data-target="#removetankmodal{{tank.id}}">Delete Aquarium</button>
-
+  <button type="button" class="update btn btn-primary update-tank-button" data-toggle="modal" data-target="#updatetankmodal{{tank.id}}">Update Aquarium Details</button>
+  <button type="button" class="remove btn btn-danger handle" data-toggle="modal" data-target="#removetankmodal{{tank.id}}">Delete Aquarium</button>
+  <button type="button" class="btn btn-info" id="show-all-tanks">Return to List of My Aquariums</button>
+  <hr>
   <!-- ADD TANK MODAL-->
   <div class="modal fade" id="createanimalmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
