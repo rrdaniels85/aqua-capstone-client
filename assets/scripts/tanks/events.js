@@ -44,9 +44,8 @@ const onDeleteTank = function () {
   const data = $(this).attr('data-id')
   // pass data in delete request to api to delete item associated with ID
   api.deleteTank(data)
-    .done(ui.deleteTankSuccess)
+    .then(ui.deleteTankSuccess)
     .catch(ui.deleteTankFailure)
-    .done(getTanks)
 }
 
 const onShowOneTank = function () {

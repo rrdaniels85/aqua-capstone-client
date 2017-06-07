@@ -1,21 +1,26 @@
 'use strict'
 const store = require('../store.js')
 const events = require('./events.js')
-const ui = require('./ui.js')
 const listAnimalsTemplate = require('../templates/list-animals.handlebars')
 
 const createAnimalSuccess = (data) => {
+  // assign tank id to the store
+  store.tank = data.animal.tank.id
   console.log('create animal data is', data)
+  // toggle modal
   $('#createanimalmodal').modal('toggle')
+  // remove remaining bootstrap modal classes
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
-  store.tank = data.animal.tank.id
   console.log(store.tank)
+  // require animal events file
   const events = require('./events.js')
+  // fun getAnimals function to refresh list of tank's animals on ui
   events.getAnimals()
 }
 
 const createAnimalFailure = () => {
+  // notify user of create animal failure
   $('.createerror').text('An error occurred. You must fill in all fields in order to create an animal.')
   console.log('create animal failed')
 }
@@ -24,10 +29,10 @@ const getAnimalsSuccess = (data) => {
   console.log('list animals ran')
   console.log('animal data list is', data)
   console.log('tank is', data.animals[0].tank.id)
+  // insert data into handlebars template
   const listAnimals = listAnimalsTemplate({ animals: data.animals })
+  // render handlebars template in div
   $('#handlebarstwo').html(listAnimals)
-  // const listAnimals = listAnimalsTemplate({ tanks: data.tanks })
-  // $('#handlebarstwo').html(listAnimals)
 }
 
 const getAnimalsFailure = () => {
@@ -35,46 +40,44 @@ const getAnimalsFailure = () => {
 }
 
 const updateAnimalSuccess = (data) => {
-  // $('#updateanimalmodal' + data).modal('toggle')
+  // assign tank id to the store
+  store.tank = data.animal.tank.id
+  // toggle update modal
+  $('#updateanimalmodal' + data.animal.id).modal('toggle')
   console.log('update animal data is', data)
+  // remove remaining bootstrap modal classes
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   console.log('update tank worked')
-  store.tank = data.animal.tank.id
   console.log(store.tank)
+  // require animal events file
   const events = require('./events.js')
+  // run getAnimals function to refresh list of tank's animals
   events.getAnimals()
 }
 
 const updateAnimalFailure = () => {
+  // notify user of update failure
   $('.updateerror').text('An error occurred. You must complete all fields in order to update a tank.')
   console.log('update tank failed')
 }
 
 const deleteAnimalSuccess = (data) => {
-  $('#removetankmodal' + data).modal('toggle')
-  // $('#content').empty()
-  // $('body').removeClass('modal-open')
+  console.log('delete data', data)
+  // toggle delete modal
+  $('#removeanimalmodal').modal('toggle')
+  // close out bootstrap modal classes
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   console.log('you successfully deleted that tank! :)')
+  // require animal events file
+  const events = require('./events.js')
+  // run getAnimals() function to refresh animals for tank
+  events.getAnimals()
 }
 
 const deleteAnimalFailure = () => {
   console.log('delete tank failed')
-}
-
-const getOneAnimalSuccess = (data) => {
-  console.log('tank success for one')
-  console.log(data)
-  $('#handlebarsone').empty()
-  $('#handlebarstwo').empty()
-  const showOneAnimal = showOneAnimalTemplate({ tank: data.tank })
-  $('#handlebarsone').html(showOneAnimal)
-}
-
-const getOneAnimalFailure = () => {
-  console.log('get tank failed')
 }
 
 module.exports = {
@@ -85,7 +88,5 @@ module.exports = {
   updateAnimalSuccess,
   updateAnimalFailure,
   deleteAnimalSuccess,
-  deleteAnimalFailure,
-  getOneAnimalSuccess,
-  getOneAnimalFailure
+  deleteAnimalFailure
 }

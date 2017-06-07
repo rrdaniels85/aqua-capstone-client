@@ -20,7 +20,7 @@ const createTankFailure = () => {
 
 const getTanksSuccess = (data) => {
   console.log('list tanks ran before template')
-  let showTankTitle = showTanksTitleTemplate()
+  const showTankTitle = showTanksTitleTemplate()
   $('#handlebarsone').html(showTankTitle)
   const listTanks = listTanksTemplate({ tanks: data.tanks })
   $('#handlebarstwo').html(listTanks)
