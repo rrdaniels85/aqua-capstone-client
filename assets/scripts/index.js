@@ -38,6 +38,14 @@ $(() => {
   })
 })
 
+$(() => {
+  $(document).on('click', '#createtankbutton', function () {
+    $('.createerror').text('')
+    $('#create-tank-name').val('')
+    $('#create-tank-water').val('')
+  })
+})
+
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
