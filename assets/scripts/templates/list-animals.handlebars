@@ -27,9 +27,9 @@
                <p>*You must fill in all fields in order to update an animal</p>
               <form class="update-animal" data-id="{{animal.id}}">
               <fieldset>
-                <input type='text' name='animal[name]' id ='updateName' placeholder="Updated Name">
-                <input type='text' name='animal[species]' id ='updateSpecies' placeholder="Updated Species">
-                <input type='text' name='animal[color]' id ='updateColor' placeholder="Updated Color">
+                <input type='text' name='animal[name]' id ='updateName' value="{{animal.name}}" placeholder="Updated Name">
+                <input type='text' name='animal[species]' id ='updateSpecies' value="{{animal.species}}" placeholder="Updated Species">
+                <input type='text' name='animal[color]' id ='updateColor' value="{{animal.color}}" placeholder="Updated Color">
                   <br>
                 <input data-id="{{animal.id}}" type="submit" name="submit" value="Update Tank">
             </fieldset>

@@ -25,7 +25,7 @@
                <p>*You must fill in all fields in order to update a tank</p>
               <form class="update-tank" data-id="{{tank.id}}">
               <fieldset>
-                <input type='text' name='tank[name]' id ='updateName' placeholder="Updated Name">
+                <input type='text' name='tank[name]' id ='updateName' value="{{tank.name}}" placeholder="Updated Name">
                 <select name="tank[water]">
                   {{#dropdown tank.water}}
                   <option disabled value>--Choose a Water Type (Required)--</option>
