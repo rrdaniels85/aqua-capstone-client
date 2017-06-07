@@ -74,6 +74,18 @@ const getOneTankFailure = () => {
   console.log('get tank failed')
 }
 
+const refreshOneTankSuccess = (data) => {
+  console.log(' refresh tank success for one')
+  console.log(data)
+  $('#handlebarsone').empty()
+  const showOneTank = showOneTankTemplate({ tank: data.tank })
+  $('#handlebarsone').html(showOneTank)
+}
+
+const refreshOneTankFailure = () => {
+  console.log('refresh tank failed')
+}
+
 module.exports = {
   createTankSuccess,
   createTankFailure,
@@ -84,5 +96,7 @@ module.exports = {
   deleteTankSuccess,
   deleteTankFailure,
   getOneTankSuccess,
-  getOneTankFailure
+  getOneTankFailure,
+  refreshOneTankSuccess,
+  refreshOneTankFailure
 }
