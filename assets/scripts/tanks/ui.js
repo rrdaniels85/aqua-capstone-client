@@ -32,7 +32,7 @@ const getTanksFailure = () => {
 
 const updateTankSuccess = (data) => {
   console.log('update tank data is', data)
-  $('#updatetankmodal' + data).modal('toggle')
+  $('#updatetankmodal' + store.tank).modal('toggle')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   console.log('update tank worked')
@@ -44,7 +44,7 @@ const updateTankFailure = () => {
 }
 
 const deleteTankSuccess = (data) => {
-  $('#removetankmodal' + data).modal('toggle')
+  $('#removetankmodal' + store.tank).modal('toggle')
   // $('#content').empty()
   // $('body').removeClass('modal-open')
   $('body').removeClass('modal-open')

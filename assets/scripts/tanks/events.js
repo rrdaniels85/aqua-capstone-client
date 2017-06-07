@@ -5,6 +5,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
 const eventsAnimals = require('../animals/events')
+const store = require('../store')
 
 const onCreateTank = function (event) {
   console.log('yo')
@@ -31,6 +32,7 @@ const onUpdateTank = function (event) {
   const data = getFormFields(this)
   // assign data-id of item to the variable tankId
   const tankId = $(this).attr('data-id')
+  store.tank = tankId
     // pass goalID to the API Patch request for item
   api.updateTank(tankId, data)
       .done(ui.updateTankSuccess, getTanks)
@@ -42,10 +44,12 @@ const onDeleteTank = function () {
   event.preventDefault()
   // assign data value to be equal to the data-id of the item user wants to remove
   const data = $(this).attr('data-id')
+  store.tank = data
   // pass data in delete request to api to delete item associated with ID
   api.deleteTank(data)
     .then(ui.deleteTankSuccess)
     .catch(ui.deleteTankFailure)
+    .done(getTanks)
 }
 
 const onShowOneTank = function () {
