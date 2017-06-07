@@ -1,6 +1,6 @@
 'use strict'
 const store = require('../store.js')
-const api = require('./api.js')
+const events = require('./events.js')
 const ui = require('./ui.js')
 const listAnimalsTemplate = require('../templates/list-animals.handlebars')
 
@@ -9,9 +9,10 @@ const createAnimalSuccess = (data) => {
   $('#createanimalmodal').modal('toggle')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
-  api.getAnimals(data)
-  .then(getAnimalsSuccess)
-  .catch(getAnimalsFailure)
+  store.tank = data.animal.tank.id
+  console.log(store.tank)
+  const events = require('./events.js')
+  events.getAnimals()
 }
 
 const createAnimalFailure = () => {
@@ -35,9 +36,14 @@ const getAnimalsFailure = () => {
 
 const updateAnimalSuccess = (data) => {
   // $('#updateanimalmodal' + data).modal('toggle')
+  console.log('update animal data is', data)
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   console.log('update tank worked')
+  store.tank = data.animal.tank.id
+  console.log(store.tank)
+  const events = require('./events.js')
+  events.getAnimals()
 }
 
 const updateAnimalFailure = () => {
