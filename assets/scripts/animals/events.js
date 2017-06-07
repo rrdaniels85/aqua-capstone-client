@@ -50,7 +50,8 @@ const onDeleteAnimal = function () {
   // prevent screen from refreshing
   event.preventDefault()
   // get id from DOM and assign to tankId
-  const tankId = $(document).find('.tank').attr('data-id')
+  const tankId = store.tank
+  // const tankId = $(document).find('.tank').attr('data-id')
   console.log('tank id is', tankId)
   // assign tankId to the store
   // store.tank = tankId

@@ -1,7 +1,7 @@
 'use strict'
 const store = require('../store.js')
 const events = require('./events.js')
-const listAnimalsTemplate = require('../templates/list-animals.handlebars')
+const listAnimalsTemplate = require('../templates/list-animals-table.handlebars')
 
 const createAnimalSuccess = (data) => {
   // assign tank id to the store
