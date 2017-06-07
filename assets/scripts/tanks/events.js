@@ -69,6 +69,7 @@ const tankHandlers = () => {
   $(document).on('submit', '.remove-tank', onDeleteTank)
   $(document).on('submit', '.update-tank', onUpdateTank)
   $(document).on('click', '#show-all-tanks', getTanks)
+  $(document).on('hidden.bs.modal', '.update-tank-modal', getTanks)
 }
 
 module.exports = {
