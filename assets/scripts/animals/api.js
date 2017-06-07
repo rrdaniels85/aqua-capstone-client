@@ -35,6 +35,7 @@ const deleteAnimal = (tankId, animalId) => {
 }
 
 const updateAnimal = (tankId, animalId, data) => {
+  console.log('api update animal ran')
   return $.ajax({
     url: config.apiOrigin + '/tanks/' + tankId + '/animals/' + animalId,
     method: 'PATCH',

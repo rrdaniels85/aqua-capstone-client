@@ -1,7 +1,7 @@
 'use strict'
 const store = require('../store.js')
 const events = require('./events.js')
-const listAnimalsTemplate = require('../templates/list-animals-table.handlebars')
+const listAnimalsTemplate = require('../templates/list-animals.handlebars')
 
 const createAnimalSuccess = (data) => {
   // assign tank id to the store
@@ -41,15 +41,12 @@ const getAnimalsFailure = () => {
 
 const updateAnimalSuccess = (data) => {
   // assign tank id to the store
-  store.tank = data.animal.tank.id
   // toggle update modal
-  $('#updateanimalmodal' + data.animal.id).modal('toggle')
-  console.log('update animal data is', data)
+  $('#updateanimalmodal' + store.tank).modal('toggle')
   // remove remaining bootstrap modal classes
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   console.log('update tank worked')
-  console.log(store.tank)
   // require animal events file
   const events = require('./events.js')
   // run getAnimals function to refresh list of tank's animals
@@ -59,7 +56,7 @@ const updateAnimalSuccess = (data) => {
 const updateAnimalFailure = () => {
   // notify user of update failure
   $('.updateerror').text('An error occurred. You must complete all fields in order to update a tank.')
-  console.log('update tank failed')
+  console.log('update animal failed')
 }
 
 const deleteAnimalSuccess = (data) => {

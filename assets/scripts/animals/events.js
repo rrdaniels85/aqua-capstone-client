@@ -42,7 +42,7 @@ const onUpdateAnimal = function (event) {
   console.log('animal id is', animalId)
     // pass goalID to the API Patch request for item
   api.updateAnimal(tankId, animalId, data)
-      .done(ui.updateAnimalSuccess)
+      .then(ui.updateAnimalSuccess)
       .catch(ui.updateAnimalFailure)
 }
 
@@ -51,8 +51,9 @@ const onDeleteAnimal = function () {
   event.preventDefault()
   // get id from DOM and assign to tankId
   const tankId = $(document).find('.tank').attr('data-id')
+  console.log('tank id is', tankId)
   // assign tankId to the store
-  store.tank = tankId
+  // store.tank = tankId
   // assign data value to be equal to the data-id of the item user wants to remove
   const animalId = $(event.target).attr('data-id')
   // pass data in delete request to api to delete item associated with ID

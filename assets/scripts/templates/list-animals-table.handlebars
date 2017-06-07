@@ -1,4 +1,4 @@
-<table class="table table-sm animal-table tank" id="{{animal.tank.id}}">
+<table class="table table-sm animal-table">
   <thead>
     <tr>
       <th>Name</th>
@@ -30,7 +30,7 @@
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">Update Animal Information</h5>
           </div>
-          <div class="modal-body">
+          <div class="modal-body tank" id="{{animal.tank.id}}">
             <p>{{animal.name}}<br>
                Species: {{animal.species}}<br>
                Color: {{animal.color}}
@@ -42,7 +42,7 @@
               <input type='text' name='animal[species]' id ='updateSpecies' value="{{animal.species}}" placeholder="Updated Species">
               <input type='text' name='animal[color]' id ='updateColor' value="{{animal.color}}" placeholder="Updated Color">
                 <br>
-              <input data-id="{{animal.id}}" type="submit" name="submit" value="Update Tank">
+              <input data-id="{{animal.id}}" type="submit" name="submit" value="Update Animal">
           </fieldset>
           </form>
           </div>
