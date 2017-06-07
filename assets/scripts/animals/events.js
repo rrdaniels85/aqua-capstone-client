@@ -35,7 +35,7 @@ const onUpdateAnimal = function (event) {
   // assign data to be what user entered in form fields
   const data = getFormFields(this)
   // get id from DOM and assign to tankId
-  const tankId = $(document).find('.tank').attr('data-id')
+  const tankId = store.tank
   console.log('tankId is', tankId)
   // assign data-id of item to the variable animalId
   const animalId = $(event.target).attr('data-id')
