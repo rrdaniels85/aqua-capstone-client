@@ -1,8 +1,8 @@
 <div id="tank-title">
 <h1>Welcome!</h1>
-<h2>Your Tanks</h2>
+<h2>My Aquariums</h2>
   <button type="button" class="btn btn-large btn-success afterlogin" id="createtankbutton" data-toggle="modal" data-target="#createtankmodal">
-    Create a New Tank!
+    Create New Aquarium!
   </button>
 
   <!-- ADD TANK MODAL-->
@@ -10,15 +10,15 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Add a New Tank</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Add a New Aquarium</h5>
       </div>
       <div class="modal-body">
   <form id="create-tank">
   <fieldset>
-    <legend>Create New Tank</legend>
+    <legend>Create New Aquarium</legend>
       <input name="tank[name]" type="text" id="create-tank-name" placeholder="Tank Name">
       <select name="tank[water]" id="create-tank-water">
-        <option disabled selected value>--Choose a Water Type (Required)--</option>
+        <option disabled selected value>--Choose a Water Type--</option>
         <option value="Fresh">Fresh</option>
         <option value="Salt">Salt</option>
         <br>
