@@ -18,6 +18,26 @@ $(() => {
   animalEvents.animalHandlers()
 })
 
+$(() => {
+  $('#passwordbutton').on('click', function () {
+    $('.passworderror').text('')
+    $('.passwordsuccess').text('')
+    $('#change-password').find('input:text, input:password, input:password, select, textarea').val('')
+  })
+})
+
+$(() => {
+  $('.loginbuttons').on('click', function () {
+    $('.signinerror').text('')
+    $('.signuperror').text('')
+    $('.passworderror').text('')
+    $('#sign-in').find('input:text, input:password, input:password, select, textarea').val('')
+    $('#sign-up').find('input:text, input:password, input:password, select, textarea').val('')
+    $('#change-password').find('input:text, input:password, input:password, select, textarea').val('')
+    $('.signupsuccess').text('')
+  })
+})
+
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
