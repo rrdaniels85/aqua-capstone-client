@@ -5,7 +5,7 @@
   <h1 class ="text-center" data-id="{{animal.id}}"> <small>{{animal.name}}</small></h1>
   <div class="text-center">
     {{#if animal.name}}
-      <ul class="list-unstyled">
+      <ul class="list-unstyled tank" data-id="{{animal.tank.id}}">
         <li data-id="{{animal.id}}">Species: {{animal.species}}</li>
         <li data-id="{{animal.id}}">Color: {{animal.color}}</li>
         <li>
@@ -17,7 +17,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Update Tank Information</h5>
+              <h5 class="modal-title" id="exampleModalLongTitle">Update Animal Information</h5>
             </div>
             <div class="modal-body">
               <p>{{animal.name}}<br>
