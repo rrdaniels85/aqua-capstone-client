@@ -3,11 +3,11 @@
   <!-- Don't uncomment yet -->
 <div class="row">
   <div class="col-sm-4 col-sm-offset-4 tank-listing">
-  <h1 class ="text-center" data-id="{{tank.id}}"> <small>{{tank.name}}</small></h1>
+  <h3 class ="text-center tank-names" data-id="{{tank.id}}">Name: {{tank.name}}</h1>
   <div class="text-center">
-      <ul class="list-unstyled"><li data-id="{{tank.id}}">Water Type: {{tank.water}}</li>
+      <ul class="list-unstyled"><li class="tank-water" data-id="{{tank.id}}">Water Type: {{tank.water}}</li>
         <li>
-          <button type="button" data-id="{{tank.id}}" class="btn btn-primary handle manage-tank">Manage Tank</button>
+          <button type="button" data-id="{{tank.id}}" class="btn btn-primary handle manage-tank">Manage Aquarium</button>
         </li>
       </ul>
 </div>

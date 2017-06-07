@@ -1,4 +1,5 @@
-<table class="table table-sm animal-table">
+<div class="container">
+<table class="table table-bordered animal-table">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,13 +17,13 @@
       <td>{{animal.species}}</td>
       <td>{{animal.color}}</td>
       <td><button type="button" class="update btn btn-primary handle" data-toggle="modal" data-target="#updateanimalmodal{{animal.id}}">Update Animal</button></td>
-      <td><button type="button" class="remove btn btn-default handle" data-toggle="modal" data-target="#removeanimalmodal{{animal.id}}">Delete Animal</button></td>
+      <td><button type="button" class="remove btn btn-danger handle" data-toggle="modal" data-target="#removeanimalmodal{{animal.id}}">Delete Animal</button></td>
     </tr>
 </tbody>
 
 {{/each}}
     </table>
-
+</div>
     {{#each animals as |animal|}}
     <div class="modal fade update-animal-modal" id="updateanimalmodal{{animal.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
