@@ -68,8 +68,8 @@ const refreshOneTank = function () {
   const tankId = store.tank
   // pass data in delete request to api to delete item associated with ID
   api.getOneTank(tankId)
-    .done(ui.getOneTankSuccess)
-    .catch(ui.getOneTankFailure)
+    .then(ui.refreshOneTankSuccess)
+    .catch(ui.refreshOneTankFailure)
 }
 
 const tankHandlers = () => {
@@ -78,7 +78,7 @@ const tankHandlers = () => {
   $(document).on('submit', '.remove-tank', onDeleteTank)
   $(document).on('submit', '.update-tank', onUpdateTank)
   $(document).on('click', '#show-all-tanks', getTanks)
-  $(document).on('hidden.bs.modal', '.update-tank-modal', getTanks)
+  $(document).on('hidden.bs.modal', '.update-tank-modal', refreshOneTank)
 }
 
 module.exports = {
