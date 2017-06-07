@@ -2,4 +2,35 @@
 <h1> Tank Name: {{tank.name}}</h1>
 <h2>Water Type: {{tank.water}}</h2>
 <button id="show-all-tanks">Return to List of My Tanks</button>
+<button type="button" class="btn btn-large btn-success" id="createanimalbutton" data-toggle="modal" data-target="#createanimalmodal">
+    Add an Animal to This Tank!
+  </button>
+
+  <!-- ADD TANK MODAL-->
+  <div class="modal fade" id="createanimalmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add an Animal to This Tank</h5>
+      </div>
+      <div class="modal-body">
+  <form id="create-animal" data-id="{{tank.id}}">
+  <fieldset>
+    <legend>Add An Animal</legend>
+    <input type='text' name='animal[name]' id ='addName' placeholder="Enter Name">
+    <input type='text' name='animal[species]' id ='addSpecies' placeholder="Enter Species">
+    <input type='text' name='animal[color]' id ='addColor' placeholder="Enter Color">
+    <input data-id="{{tank.id}}" type="submit" name="submit" value="Add Animal">
+  </fieldset>
+  </form>
+  </div>
+  <div class="modal-footer">
+  <div class="createerror"></div>
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
 </div>
