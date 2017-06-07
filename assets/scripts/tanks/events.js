@@ -4,7 +4,6 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
-const eventsAnimals = require('../animals/events')
 const store = require('../store')
 
 const onCreateTank = function (event) {
@@ -57,7 +56,7 @@ const onShowOneTank = function (event) {
   // prevent screen from refreshing
   event.preventDefault()
   // assign data value to be equal to the data-id of the item user wants to remove
-  const tankId = $(this).attr('data-id')
+  const tankId = $(event.target).attr('data-id')
   // pass data in delete request to api to delete item associated with ID
   api.getOneTank(tankId)
     .done(ui.getOneTankSuccess)
@@ -72,7 +71,14 @@ const refreshOneTank = function () {
     .catch(ui.refreshOneTankFailure)
 }
 
+// const navGetTanks = function () {
+//   api.getTanks()
+//     .then(ui.navTanksSuccess)
+//     .catch(ui.navTanksFailure)
+// }
+
 const tankHandlers = () => {
+  // $('#mytanksnav').on('click', navGetTanks)
   $(document).on('submit', '#create-tank', onCreateTank)
   $(document).on('click', '.manage-tank', onShowOneTank)
   $(document).on('submit', '.remove-tank', onDeleteTank)

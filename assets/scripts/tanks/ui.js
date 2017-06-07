@@ -86,6 +86,19 @@ const refreshOneTankFailure = () => {
   console.log('refresh tank failed')
 }
 
+// const navTanksSuccess = (data) => {
+//   console.log('list tanks ran before template')
+//   $('#my-account').dropdown('toggle')
+//   const showTankTitle = showTanksTitleTemplate()
+//   $('#handlebarsone').html(showTankTitle)
+//   const listTanks = listTanksTemplate({ tanks: data.tanks })
+//   $('#handlebarstwo').html(listTanks)
+// }
+//
+// const navTanksFailure = () => {
+//   console.log('get tanks failed')
+// }
+
 module.exports = {
   createTankSuccess,
   createTankFailure,
@@ -99,4 +112,6 @@ module.exports = {
   getOneTankFailure,
   refreshOneTankSuccess,
   refreshOneTankFailure
+  // navTanksSuccess,
+  // navTanksFailure
 }
