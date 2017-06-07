@@ -1,0 +1,78 @@
+<table class="table table-sm animal-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Species</th>
+      <th>Color</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each animals as |animal|}}
+    <tr data-id="{{animal.id}}">
+      <td>{{animal.name}}</td>
+      <td>{{animal.species}}</td>
+      <td>{{animal.color}}</td>
+      <td><button type="button" class="update btn btn-primary handle" data-toggle="modal" data-target="#updateanimalmodal{{animal.id}}">Update Animal</button></td>
+      <td><button type="button" class="remove btn btn-default handle" data-toggle="modal" data-target="#removeanimalmodal{{animal.id}}">Delete Animal</button></td>
+    </tr>
+</tbody>
+
+{{/each}}
+    </table>
+
+    {{#each animals as |animal|}}
+    <div class="modal fade update-animal-modal" id="updateanimalmodal{{animal.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Update Animal Information</h5>
+          </div>
+          <div class="modal-body tank" id="{{animal.tank.id}}">
+            <p>{{animal.name}}<br>
+               Species: {{animal.species}}<br>
+               Color: {{animal.color}}
+             </p>
+             <p>*You must fill in all fields in order to update an animal</p>
+            <form class="update-animal" data-id="{{animal.id}}">
+            <fieldset>
+              <input type='text' name='animal[name]' id ='updateName' value="{{animal.name}}" placeholder="Updated Name">
+              <input type='text' name='animal[species]' id ='updateSpecies' value="{{animal.species}}" placeholder="Updated Species">
+              <input type='text' name='animal[color]' id ='updateColor' value="{{animal.color}}" placeholder="Updated Color">
+                <br>
+              <input data-id="{{animal.id}}" type="submit" name="submit" value="Update Animal">
+          </fieldset>
+          </form>
+          </div>
+          <div class="modal-footer">
+            <div class="updateerror"></div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="removeanimalmodal{{animal.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Are you sure you want to delete animal?</h5>
+          </div>
+          <div class="modal-body">
+            <form class="remove-animal" data-id="{{animal.id}}">
+              <fieldset>
+                <legend>{{animal.name}}</legend>
+                <input type="submit" name="submit" value="Remove Tank">
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <div class="passworderror"></div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}

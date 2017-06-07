@@ -36,7 +36,7 @@ const onUpdateTank = function (event) {
   store.tank = tankId
     // pass goalID to the API Patch request for item
   api.updateTank(tankId, data)
-      .done(ui.updateTankSuccess, getTanks)
+      .then(ui.updateTankSuccess)
       .catch(ui.updateTankFailure)
 }
 
@@ -53,11 +53,19 @@ const onDeleteTank = function () {
     .done(getTanks)
 }
 
-const onShowOneTank = function () {
+const onShowOneTank = function (event) {
   // prevent screen from refreshing
   event.preventDefault()
   // assign data value to be equal to the data-id of the item user wants to remove
   const tankId = $(this).attr('data-id')
+  // pass data in delete request to api to delete item associated with ID
+  api.getOneTank(tankId)
+    .done(ui.getOneTankSuccess)
+    .catch(ui.getOneTankFailure)
+}
+
+const refreshOneTank = function () {
+  const tankId = store.tank
   // pass data in delete request to api to delete item associated with ID
   api.getOneTank(tankId)
     .done(ui.getOneTankSuccess)
@@ -78,5 +86,6 @@ module.exports = {
   onCreateTank,
   getTanks,
   onUpdateTank,
-  onShowOneTank
+  onShowOneTank,
+  refreshOneTank
 }
