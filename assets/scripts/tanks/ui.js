@@ -59,10 +59,13 @@ const deleteTankFailure = () => {
 const getOneTankSuccess = (data) => {
   console.log('tank success for one')
   console.log(data)
+  store.tank = data.tank.id
   $('#handlebarsone').empty()
   $('#handlebarstwo').empty()
   const showOneTank = showOneTankTemplate({ tank: data.tank })
   $('#handlebarsone').html(showOneTank)
+  const animalEvents = require('../animals/events.js')
+  animalEvents.getAnimals()
 }
 
 const getOneTankFailure = () => {
