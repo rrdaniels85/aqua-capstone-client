@@ -65,6 +65,7 @@ const animalHandlers = () => {
   $(document).on('submit', '#create-animal', onCreateAnimal)
   $(document).on('submit', '.remove-animal', onDeleteAnimal)
   $(document).on('submit', '.update-animal', onUpdateAnimal)
+  $(document).on('hidden.bs.modal', '.update-animal-modal', getAnimals)
 }
 
 module.exports = {

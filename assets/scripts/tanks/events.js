@@ -19,6 +19,7 @@ const onCreateTank = function (event) {
 }
 
 const getTanks = function () {
+  store.tank = null
   // send request to API to get goals without an event trigger
   api.getTanks()
     .then(ui.getTanksSuccess)
