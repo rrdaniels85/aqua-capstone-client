@@ -1,10 +1,10 @@
 {{#each tanks as |tank|}}
 
   <!-- Don't uncomment yet -->
-
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3 tank-listing">
   <h1 class ="text-center" data-id="{{tank.id}}"> <small>{{tank.name}}</small></h1>
   <div class="text-center">
-    {{#if tank.name}}
       <ul class="list-unstyled"><li data-id="{{tank.id}}">Water Type: {{tank.water}}</li>
         <li>
           <button type="button" data-id="{{tank.id}}" class="btn btn-default handle manage-tank">Manage Tank</button>
@@ -12,6 +12,13 @@
           <button type="button" class="remove btn btn-default handle" data-toggle="modal" data-target="#removetankmodal{{tank.id}}">Remove Tank</button>
         </li>
       </ul>
+</div>
+</div>
+</div>
+<br>
+<br>
+<br>
+
       <div class="modal fade update-tank-modal" id="updatetankmodal{{tank.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -67,7 +74,5 @@
           </div>
         </div>
       </div>
-
-    {{/if}}
   </div>
 {{/each}}
