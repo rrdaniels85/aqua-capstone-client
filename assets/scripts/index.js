@@ -51,6 +51,15 @@ $(() => {
     $('.updateerror').text('')
   })
 })
+
+$(() => {
+  $(document).on('click', '#createanimalbutton', function () {
+    $('.createerror').text('')
+    $('#create-animal-name').val('')
+    $('#create-animal-species').val('')
+    $('#create-animal-color').val('')
+  })
+})
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
