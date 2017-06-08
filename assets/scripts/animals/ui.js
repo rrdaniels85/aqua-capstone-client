@@ -33,6 +33,9 @@ const getAnimalsSuccess = (data) => {
     console.log('you have no animals')
     console.log('animal data list is', data)
   } else {
+    data.animals.sort(function (a, b) {
+      return parseFloat(b.id) - parseFloat(a.id)
+    })
   // insert data into handlebars template
     const listAnimals = listAnimalsTemplate({ animals: data.animals })
   // render handlebars template in div
