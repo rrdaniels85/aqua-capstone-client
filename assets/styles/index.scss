@@ -3,12 +3,16 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 body {
   background-image: url('https://imgur.com/2P8xIP1.jpg');
-  font-family: 'Lakki Reddy', cursive;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 
 #handlebarsone {
   text-align: center;
+}
+
+.loginbuttons {
+  font-size: 20px;
 }
 
 .no-tanks {
@@ -27,7 +31,7 @@ body {
 .about{
   background-color: #F0F8FF;
   opacity: .9;
-  border-radius: 15px;
+  padding: 10px;
 }
 
 .about-title {
