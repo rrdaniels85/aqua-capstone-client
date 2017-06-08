@@ -1,6 +1,6 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# Aquarium App
+# Aquarium Tracker App
 
 This application is targeted at aquarium enthusiasts. It allows them, after signing in, to create multiple tanks with attributes. The user can then keep an inventory of the animals that they keep in their tanks (ex. fish, snails, etc.). This allows them to keep their aquariums more organized.
 
@@ -10,8 +10,8 @@ This application is targeted at aquarium enthusiasts. It allows them, after sign
 
 ## Application Links
 -   [Back-End Repository](https://github.com/rrdaniels85/aqua-capstone-api)
--   [Deployed Live Online Application](https://rrdaniels85.github.io/aqua-capstone-client/)
--   [Heroku Live Application Link for Back-End](https://still-castle-88480.herokuapp.com/)
+-   [Deployed Client App](https://rrdaniels85.github.io/aqua-capstone-client/)
+-   [Deployed API](https://still-castle-88480.herokuapp.com/)
 
 ## Dependencies
 
