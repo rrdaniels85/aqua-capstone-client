@@ -74,11 +74,11 @@
           <h4 class="modal-title" id="exampleModalLongTitle">Are you sure you want to delete this aquarium?</h4>
         </div>
         <div class="modal-body">
+          <legend>Aquarium Name: {{tank.name}}</legend>
           <h4>**Please note that by deleting this aquarium, you will also be deleting any animals listed inside this aquarium.</h4>
           <form class="remove-tank" data-id="{{tank.id}}">
             <fieldset>
-              <legend>Aquarium Name: {{tank.name}}</legend>
-              <input type="submit" name="submit" value="Delete Aquarium">
+              <input type="submit" name="submit" value="Proceed With Deleting Aquarium">
             </fieldset>
           </form>
         </div>
