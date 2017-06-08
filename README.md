@@ -4,6 +4,15 @@
 
 This application is targeted at aquarium enthusiasts. It allows them, after signing in, to create multiple tanks with attributes. The user can then keep an inventory of the animals that they keep in their tanks (ex. fish, snails, etc.).
 
+![alt text](http://imgur.com/iV1erts)
+![alt text](http://imgur.com/R5tmK6E)
+![alt text](http://imgur.com/AgqgaL0)
+
+## Application Links
+-   [Back-End Repository](https://github.com/rrdaniels85/aqua-capstone-api)
+-   [Deployed Live Online Application](https://rrdaniels85.github.io/aqua-capstone-client/)
+-   [Heroku Live Application Link for Back-End](https://still-castle-88480.herokuapp.com/)
+
 ## Dependencies
 
 Install with `npm install`.
@@ -17,6 +26,8 @@ Install with `npm install`.
 ![alt text](http://i.imgur.com/HsYPU1J.jpg)
 ![alt text](http://i.imgur.com/jWik1uf.jpg)
 ![alt text](http://i.imgur.com/T753CCz.jpg)
+
+[Link to Wireframes on Imgur](http://imgur.com/a/OL7fT)
 
 ## User Stories
 MAIN
