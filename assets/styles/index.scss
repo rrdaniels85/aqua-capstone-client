@@ -1,6 +1,10 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+$app-grey: #e6e6e6;
+$hover-blue: #b3e6ff;
+$black: #000;
+
 body {
   background-image: url('https://imgur.com/2P8xIP1.jpg');
   font-family: 'Merriweather Sans', sans-serif;
@@ -16,20 +20,20 @@ body {
 }
 
 .no-tanks {
-  border: 2px solid black;
-  border-radius: 15px;
-  background-color: white;
-  background: rgba(240,248,255, .8);
+  // border: 2px solid black;
+  // border-radius: 15px;
+  background-color: $app-grey;
+  background: rgba(230, 230, 230, .8);
   text-align: center;
 }
 
 .tank-style {
+  background-color: $app-grey;
   width: 100%;
-  background: #F0F8FF;
 }
 
-.about{
-  background-color: #F0F8FF;
+.about {
+  background-color: $app-grey;
   opacity: .9;
   padding: 10px;
 }
@@ -51,27 +55,27 @@ th {
 }
 
 .tank-listing:hover {
-  background-color: #b3e6ff;
+  background-color: $hover-blue;
 }
 
 tr:hover {
-  background-color: #b3e6ff;
+  background-color: $hover-blue;
 }
 
 .tank-listing {
   // border: 2px solid black;
   // border-radius: 15px;
-  background-color: white;
-  background: rgba(240,248,255, .8)
+  background-color: $app-grey;
+  background: rgba(230, 230, 230, .8)
 }
 
 .animal-table {
-  background-color: #F0F8FF;
+  background-color: $app-grey;
   font-size: 20px;
 }
 
 .tank-names {
-  color: black;
+  color: $black;
 }
 
 .tank-water {

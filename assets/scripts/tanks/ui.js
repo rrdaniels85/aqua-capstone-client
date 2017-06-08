@@ -25,6 +25,9 @@ const getTanksSuccess = (data) => {
     $('#handlebarstwo').html(noTanks)
   } else {
     console.log('list tanks ran before template')
+    data.tanks.sort(function (a, b) {
+      return parseFloat(b.id) - parseFloat(a.id)
+    })
     const showTankTitle = showTanksTitleTemplate()
     $('#handlebarsone').html(showTankTitle)
     const listTanks = listTanksTemplate({ tanks: data.tanks })
