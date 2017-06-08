@@ -7,7 +7,6 @@ const ui = require('./ui')
 const store = require('../store')
 
 const onCreateTank = function (event) {
-  console.log('yo')
   // prevent screen from refreshing
   event.preventDefault()
   // assign form field inputs to variable data
