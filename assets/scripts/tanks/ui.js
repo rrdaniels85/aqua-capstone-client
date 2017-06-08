@@ -11,7 +11,6 @@ const createTankSuccess = (data) => {
   // remove bootstrap modal classes
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
-  console.log('you successfully created a tank')
 }
 
 const createTankFailure = () => {
@@ -28,7 +27,6 @@ const getTanksSuccess = (data) => {
     const noTanks = noTanksTemplate()
     $('#handlebarstwo').html(noTanks)
   } else {
-    console.log('list tanks ran before template')
     // if there are tanks, sort tanks from newest to oldest by ID #
     data.tanks.sort(function (a, b) {
       return parseFloat(b.id) - parseFloat(a.id)
@@ -45,13 +43,11 @@ const getTanksFailure = () => {
 }
 
 const updateTankSuccess = (data) => {
-  console.log('update tank data is', data)
   // toggle modal
   $('#updatetankmodal' + store.tank).modal('toggle')
   // remove modal classes
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
-  console.log('update tank worked')
   // refresh tank info
   const events = require('./events.js')
   events.refreshOneTank()
@@ -68,15 +64,12 @@ const deleteTankSuccess = (data) => {
   // remove modal classes
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
-  console.log('you successfully deleted that tank! :)')
 }
 
 const deleteTankFailure = () => {
 }
 
 const getOneTankSuccess = (data) => {
-  console.log('tank success for one')
-  console.log(data)
   // assign tankId to the store
   store.tank = data.tank.id
   // clear handlebars divs
@@ -94,8 +87,6 @@ const getOneTankFailure = () => {
 }
 
 const refreshOneTankSuccess = (data) => {
-  console.log(' refresh tank success for one')
-  console.log(data)
   // refresh one tank info with handlebars template
   $('#handlebarsone').empty()
   const showOneTank = showOneTankTemplate({ tank: data.tank })

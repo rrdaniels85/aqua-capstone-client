@@ -34,10 +34,8 @@ const onUpdateAnimal = function (event) {
   const data = getFormFields(this)
   // get id from DOM and assign to tankId
   const tankId = store.tank
-  console.log('tankId is', tankId)
   // assign data-id of item to the variable animalId
   const animalId = $(event.target).attr('data-id')
-  console.log('animal id is', animalId)
     // pass goalID to the API Patch request for item
   api.updateAnimal(tankId, animalId, data)
       .then(ui.updateAnimalSuccess)
