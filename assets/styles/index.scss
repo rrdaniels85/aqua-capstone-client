@@ -82,11 +82,11 @@ tr:hover {
   font-size: 20px;
 }
 
-
 .carousel-fade .carousel-inner .item {
     opacity: 0;
     transition-property: opacity;
 }
+
 .carousel-fade .carousel-inner .active {
     opacity: 1;
 }
