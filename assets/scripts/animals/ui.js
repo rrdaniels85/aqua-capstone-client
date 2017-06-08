@@ -63,7 +63,7 @@ const updateAnimalSuccess = (data) => {
 
 const updateAnimalFailure = () => {
   // notify user of update failure
-  $('.updateerror').text('An error occurred. You must complete all fields in order to update a tank.')
+  $('.updateerror').text('An error occurred. You must complete all fields in order to update an animal.')
   console.log('update animal failed')
 }
 

@@ -13,7 +13,7 @@ const createTankSuccess = (data) => {
 }
 
 const createTankFailure = () => {
-  $('.createerror').text('An error occurred. You must fill in all fields in order to create a new item.')
+  $('.createerror').text('An error occurred. You must fill in all fields in order to create an aquarium.')
   console.log('create tank failed')
 }
 
@@ -50,7 +50,7 @@ const updateTankSuccess = (data) => {
 }
 
 const updateTankFailure = () => {
-  $('.updateerror').text('An error occurred. You must complete all fields in order to update a tank.')
+  $('.updateerror').text('An error occurred. You must complete all fields in order to update an aquarium.')
   console.log('update tank failed')
 }
 
