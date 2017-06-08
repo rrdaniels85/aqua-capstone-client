@@ -2,6 +2,7 @@
 const store = require('../store.js')
 const events = require('./events.js')
 const listAnimalsTemplate = require('../templates/list-animals-table.handlebars')
+const noAnimalsTemplate = require('../templates/no-animals.handlebars')
 
 const createAnimalSuccess = (data) => {
   // assign tank id to the store
@@ -26,13 +27,17 @@ const createAnimalFailure = () => {
 }
 
 const getAnimalsSuccess = (data) => {
-  console.log('list animals ran')
-  console.log('animal data list is', data)
-  console.log('tank is', data.animals[0].tank.id)
+  if (data.animals.length === 0) {
+    const noAnimals = noAnimalsTemplate()
+    $('#handlebarstwo').html(noAnimals)
+    console.log('you have no animals')
+    console.log('animal data list is', data)
+  } else {
   // insert data into handlebars template
-  const listAnimals = listAnimalsTemplate({ animals: data.animals })
+    const listAnimals = listAnimalsTemplate({ animals: data.animals })
   // render handlebars template in div
-  $('#handlebarstwo').html(listAnimals)
+    $('#handlebarstwo').html(listAnimals)
+  }
 }
 
 const getAnimalsFailure = () => {

@@ -11,15 +11,40 @@ body {
   text-align: center;
 }
 
+.no-tanks {
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: white;
+  background: rgba(240,248,255, .8);
+  text-align: center;
+}
+
 .tank-style {
   width: 100%;
   background: #F0F8FF;
+}
+
+.about{
+  background-color: #F0F8FF;
+  opacity: .9;
+  border-radius: 15px;
+}
+
+.about-title {
+  font-size: 35px;
+}
+
+.about-section {
+  font-size: 20px;
 }
 
 .hidden {
   display: none;
 }
 
+th {
+  text-align: center;
+}
 
 .tank-listing {
   border: 2px solid black;
