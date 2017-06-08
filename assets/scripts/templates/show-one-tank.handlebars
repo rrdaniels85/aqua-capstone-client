@@ -1,6 +1,6 @@
 <div class="single-tank-view tank-style">
   <br>
-<h1> Aquarium Name: {{tank.name}}</h1>
+<h1><strong> Aquarium Name: {{tank.name}}</strong></h1>
 <h2>Water Type: {{tank.water}}</h2>
 <button type="button" class="btn btn-large btn-success" id="createanimalbutton" data-toggle="modal" data-target="#createanimalmodal">
     Add Animal to this Aquarium!
@@ -17,6 +17,7 @@
         <h5 class="modal-title" id="exampleModalLongTitle">Add a Critter to This Aquarium</h5>
       </div>
       <div class="modal-body">
+        <p>*You must complete all fields in order to add an animal.</p>
   <form id="create-animal" data-id="{{tank.id}}">
   <fieldset>
     <legend>Add An Animal</legend>

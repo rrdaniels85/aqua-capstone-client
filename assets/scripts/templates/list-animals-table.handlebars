@@ -32,11 +32,7 @@
             <h5 class="modal-title" id="exampleModalLongTitle">Update Animal Information</h5>
           </div>
           <div class="modal-body tank" id="{{animal.tank.id}}">
-            <p>{{animal.name}}<br>
-               Species: {{animal.species}}<br>
-               Color: {{animal.color}}
-             </p>
-             <p>*You must fill in all fields in order to update an animal</p>
+             <p>*You must complete all fields in order to update an animal.</p>
             <form class="update-animal" data-id="{{animal.id}}">
             <fieldset>
               <input type='text' name='animal[name]' id ='updateName' value="{{animal.name}}" maxlength="60" placeholder="Updated Name">
