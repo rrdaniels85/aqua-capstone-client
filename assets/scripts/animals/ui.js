@@ -28,7 +28,6 @@ const createAnimalFailure = () => {
 const getAnimalsSuccess = (data) => {
   console.log('list animals ran')
   console.log('animal data list is', data)
-  console.log('tank is', data.animals[0].tank.id)
   // insert data into handlebars template
   const listAnimals = listAnimalsTemplate({ animals: data.animals })
   // render handlebars template in div

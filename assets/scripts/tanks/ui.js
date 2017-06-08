@@ -3,6 +3,7 @@ const store = require('../store.js')
 const listTanksTemplate = require('../templates/list-tanks.handlebars')
 const showOneTankTemplate = require('../templates/show-one-tank.handlebars')
 const showTanksTitleTemplate = require('../templates/tank-title.handlebars')
+const noTanksTemplate = require('../templates/no-tanks.handlebars')
 
 const createTankSuccess = (data) => {
   $('#createtankmodal').modal('toggle')
@@ -17,11 +18,18 @@ const createTankFailure = () => {
 }
 
 const getTanksSuccess = (data) => {
-  console.log('list tanks ran before template')
-  const showTankTitle = showTanksTitleTemplate()
-  $('#handlebarsone').html(showTankTitle)
-  const listTanks = listTanksTemplate({ tanks: data.tanks })
-  $('#handlebarstwo').html(listTanks)
+  if (data.tanks.length === 0) {
+    const showTankTitle = showTanksTitleTemplate()
+    $('#handlebarsone').html(showTankTitle)
+    const noTanks = noTanksTemplate()
+    $('#handlebarstwo').html(noTanks)
+  } else {
+    console.log('list tanks ran before template')
+    const showTankTitle = showTanksTitleTemplate()
+    $('#handlebarsone').html(showTankTitle)
+    const listTanks = listTanksTemplate({ tanks: data.tanks })
+    $('#handlebarstwo').html(listTanks)
+  }
 }
 
 const getTanksFailure = () => {
