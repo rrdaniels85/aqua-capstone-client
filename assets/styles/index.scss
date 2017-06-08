@@ -7,8 +7,21 @@ $black: #000;
 
 body {
   font-family: 'Merriweather Sans', sans-serif;
-  min-width: 580px;
+  // min-width: 580px;
 }
+
+.img-responsive {
+  max-width: 100%;
+  // height: auto;
+  margin: auto;
+}
+
+
+// @media(min-width < 580px){
+// .img {
+//    max-width: 50%;
+//  }
+// }
 
 #handlebarsone {
   text-align: center;
