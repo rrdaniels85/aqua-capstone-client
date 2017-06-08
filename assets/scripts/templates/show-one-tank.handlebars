@@ -24,6 +24,7 @@
     <input type='text' name='animal[name]' id ='create-animal-name' maxlength="60" placeholder="Enter Name">
     <input type='text' name='animal[species]' id ='create-animal-species' maxlength="60" placeholder="Enter Species">
     <input type='text' name='animal[color]' id ='create-animal-color' maxlength="60" placeholder="Enter Color">
+    <hr>
     <input data-id="{{tank.id}}" type="submit" name="submit" value="Add Animal">
   </fieldset>
   </form>
@@ -54,8 +55,8 @@
               <option value="Fresh">Fresh</option>
               <option value="Salt">Salt</option>
               {{/dropdown}}
-              <br>
-            </select>
+              </select>
+              <hr>
             <input data-id="{{tank.id}}" type="submit" name="submit" value="Update Aquarium">
         </fieldset>
         </form>

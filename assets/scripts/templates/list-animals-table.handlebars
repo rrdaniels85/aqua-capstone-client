@@ -38,7 +38,7 @@
               <input type='text' name='animal[name]' id ='updateName' value="{{animal.name}}" maxlength="60" placeholder="Updated Name">
               <input type='text' name='animal[species]' id ='updateSpecies' value="{{animal.species}}" maxlength="60" placeholder="Updated Species">
               <input type='text' name='animal[color]' id ='updateColor' value="{{animal.color}}" maxlength="60" placeholder="Updated Color">
-                <br>
+                <hr>
               <input data-id="{{animal.id}}" type="submit" name="submit" value="Update Animal">
           </fieldset>
           </form>
@@ -60,8 +60,8 @@
           <div class="modal-body">
             <form class="remove-animal" data-id="{{animal.id}}">
               <fieldset>
-                <legend>{{animal.name}}</legend>
-                <input type="submit" name="submit" value="Remove Tank">
+                <legend>Animal Name: {{animal.name}}</legend>
+                <input type="submit" name="submit" value="Delete Animal">
               </fieldset>
             </form>
           </div>
