@@ -20,9 +20,9 @@
   <form id="create-animal" data-id="{{tank.id}}">
   <fieldset>
     <legend>Add An Animal</legend>
-    <input type='text' name='animal[name]' id ='create-animal-name' placeholder="Enter Name">
-    <input type='text' name='animal[species]' id ='create-animal-species' placeholder="Enter Species">
-    <input type='text' name='animal[color]' id ='create-animal-color' placeholder="Enter Color">
+    <input type='text' name='animal[name]' id ='create-animal-name' maxlength="60" placeholder="Enter Name">
+    <input type='text' name='animal[species]' id ='create-animal-species' maxlength="60" placeholder="Enter Species">
+    <input type='text' name='animal[color]' id ='create-animal-color' maxlength="60" placeholder="Enter Color">
     <input data-id="{{tank.id}}" type="submit" name="submit" value="Add Animal">
   </fieldset>
   </form>
@@ -46,7 +46,7 @@
            <p>*You must complete all fields in order to update an aquarium</p>
           <form class="update-tank" data-id="{{tank.id}}">
           <fieldset>
-            <input type='text' name='tank[name]' id ='updateName' value="{{tank.name}}" placeholder="Updated Name">
+            <input type='text' name='tank[name]' id ='updateName' maxlength="60" value="{{tank.name}}" placeholder="Updated Name">
             <select name="tank[water]">
               {{#dropdown tank.water}}
               <option disabled value>--Choose a Water Type (Required)--</option>
