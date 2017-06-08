@@ -7,13 +7,11 @@ const noAnimalsTemplate = require('../templates/no-animals.handlebars')
 const createAnimalSuccess = (data) => {
   // assign tank id to the store
   store.tank = data.animal.tank.id
-  console.log('create animal data is', data)
   // toggle modal
   $('#createanimalmodal').modal('toggle')
   // remove remaining bootstrap modal classes
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
-  console.log(store.tank)
   // require animal events file
   const events = require('./events.js')
   // fun getAnimals function to refresh list of tank's animals on ui
@@ -30,8 +28,6 @@ const getAnimalsSuccess = (data) => {
   if (data.animals.length === 0) {
     const noAnimals = noAnimalsTemplate()
     $('#handlebarstwo').html(noAnimals)
-    console.log('you have no animals')
-    console.log('animal data list is', data)
   } else {
     // if animals - sort from highest to lowest id
     data.animals.sort(function (a, b) {
@@ -45,7 +41,6 @@ const getAnimalsSuccess = (data) => {
 }
 
 const getAnimalsFailure = () => {
-  console.log('get animals failed')
 }
 
 const updateAnimalSuccess = (data) => {
@@ -54,7 +49,6 @@ const updateAnimalSuccess = (data) => {
   // remove remaining bootstrap modal classes
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
-  console.log('update tank worked')
   // require animal events file
   const events = require('./events.js')
   // run getAnimals function to refresh list of tank's animals
@@ -64,17 +58,14 @@ const updateAnimalSuccess = (data) => {
 const updateAnimalFailure = () => {
   // notify user of update failure
   $('.updateerror').text('An error occurred. You must complete all fields in order to update an animal.')
-  console.log('update animal failed')
 }
 
 const deleteAnimalSuccess = (data) => {
-  console.log('delete data', data)
   // toggle delete modal
   $('#removeanimalmodal').modal('toggle')
   // close out bootstrap modal classes
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
-  console.log('you successfully deleted that tank! :)')
   // require animal events file
   const events = require('./events.js')
   // run getAnimals() function to refresh animals for tank
@@ -82,7 +73,6 @@ const deleteAnimalSuccess = (data) => {
 }
 
 const deleteAnimalFailure = () => {
-  console.log('delete tank failed')
 }
 
 module.exports = {
