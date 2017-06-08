@@ -37,15 +37,12 @@ const signInFailure = () => {
 
 const signOutSuccess = () => {
   store.user = null
+  store.tank = null
   $('#signoutmodal').modal('toggle')
   $('.visitor-view').removeClass('hidden')
   $('#handlebarsone').empty()
   $('#handlebarstwo').empty()
-  // $('body').removeClass('modal-open')
-  // $('body').removeClass('modal-open')
-  // $('.modal-backdrop').remove()
   $('.user-view').addClass('hidden')
-  // $('.afterlogin').addClass('hidden')
   console.log('sign out was successful')
 }
 

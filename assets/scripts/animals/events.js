@@ -12,6 +12,7 @@ const onCreateAnimal = function (event) {
   event.preventDefault()
   // assign form field inputs to variable data
   const data = getFormFields(this)
+  // assign tank id
   const tankId = $(event.target).attr('data-id')
   console.log(data)
   console.log(tankId)
@@ -22,6 +23,7 @@ const onCreateAnimal = function (event) {
 
 const getAnimals = function () {
   console.log('get animals tank id is', tankId)
+  // assign tankId
   const tankId = store.tank
   // send request to API to get goals without an event trigger
   api.getAnimals(tankId)
