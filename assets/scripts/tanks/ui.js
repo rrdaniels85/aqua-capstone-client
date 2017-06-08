@@ -17,7 +17,6 @@ const createTankSuccess = (data) => {
 const createTankFailure = () => {
   // notify user of error
   $('.createerror').text('An error occurred. You must fill in all fields in order to create an aquarium.')
-  console.log('create tank failed')
 }
 
 const getTanksSuccess = (data) => {
@@ -43,7 +42,6 @@ const getTanksSuccess = (data) => {
 }
 
 const getTanksFailure = () => {
-  console.log('get tanks failed')
 }
 
 const updateTankSuccess = (data) => {
@@ -62,7 +60,6 @@ const updateTankSuccess = (data) => {
 const updateTankFailure = () => {
   // notify user of update tank failure
   $('.updateerror').text('An error occurred. You must complete all fields in order to update an aquarium.')
-  console.log('update tank failed')
 }
 
 const deleteTankSuccess = (data) => {
@@ -75,7 +72,6 @@ const deleteTankSuccess = (data) => {
 }
 
 const deleteTankFailure = () => {
-  console.log('delete tank failed')
 }
 
 const getOneTankSuccess = (data) => {
@@ -95,7 +91,6 @@ const getOneTankSuccess = (data) => {
 }
 
 const getOneTankFailure = () => {
-  console.log('get tank failed')
 }
 
 const refreshOneTankSuccess = (data) => {
@@ -108,7 +103,6 @@ const refreshOneTankSuccess = (data) => {
 }
 
 const refreshOneTankFailure = () => {
-  console.log('refresh tank failed')
 }
 
 module.exports = {
