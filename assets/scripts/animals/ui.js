@@ -23,16 +23,17 @@ const createAnimalSuccess = (data) => {
 const createAnimalFailure = () => {
   // notify user of create animal failure
   $('.createerror').text('An error occurred. You must fill in all fields in order to create an animal.')
-  console.log('create animal failed')
 }
 
 const getAnimalsSuccess = (data) => {
+  // if no animals - display message to user with handlebars templates
   if (data.animals.length === 0) {
     const noAnimals = noAnimalsTemplate()
     $('#handlebarstwo').html(noAnimals)
     console.log('you have no animals')
     console.log('animal data list is', data)
   } else {
+    // if animals - sort from highest to lowest id
     data.animals.sort(function (a, b) {
       return parseFloat(b.id) - parseFloat(a.id)
     })
@@ -48,7 +49,6 @@ const getAnimalsFailure = () => {
 }
 
 const updateAnimalSuccess = (data) => {
-  // assign tank id to the store
   // toggle update modal
   $('#updateanimalmodal' + store.tank).modal('toggle')
   // remove remaining bootstrap modal classes

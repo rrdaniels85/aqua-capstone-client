@@ -12,12 +12,14 @@ const onCreateTank = function (event) {
   event.preventDefault()
   // assign form field inputs to variable data
   const data = getFormFields(this)
+  // send ajax request to create a tank
   api.createTank(data)
     .done(ui.createTankSuccess, getTanks)
     .catch(ui.createTankFailure)
 }
 
 const getTanks = function () {
+  // clear tank data in store
   store.tank = null
   // send request to API to get goals without an event trigger
   api.getTanks()
