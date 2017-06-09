@@ -60,26 +60,26 @@ STRETCH OBJECTIVE USER STORIES:
 
 ## General Approach
 
-**Planning**
+**Planning:**
 Before I wrote any code, I had a brainstorming session where I wrote out possible ideas for my application and potential functionality. I then tried to consider what I actually thought I could
 successfully accomplish given the time constraints of project week. This helped me to keep my scope in
 check. Once I had decided on my main project goal, I created the user stories and wireframes. I then created a stretch goal for myself which I incorporated in my user stories and ERD. I indicated that this was a stretch goal that I could strive for if I had capacity over the course of the project.
 
-**Execution**
+**Execution:**
 As I had done in the past, I first focused on getting my API functional. Once this was working for the tanks resource, I created a basic front-end layout that allowed me to connect my client with the API and confirm that the tanks CRUD functionality was working correctly with the front-end.
 
 Then, I repeated this process with the animals resouce in my API. Once I successfully had that working, I then created a basic front end layout for animals and, like with tanks, confirmed the API was working correctly with the front-end.
 
-After I had also my CRUD functionality for my resources working as expected, I turned my attention to the UI. I used Bootsrap to provide a better layout and created handlebars templates to render my data to the
+After I had my basic front-end functionality working, I turned my attention to the UI. I used Bootstrap to provide a better layout and created handlebars templates to render my data to the
 user. Once I had a solid layout, then I tried to add some additional nice effects such as hover and a background carousel. After I felt comfortable with the UI of my application, I then spent some time testing out my application.
 
 ## Unsolved Problems
 
-If given more time, I would like to try incorporating a front-end framework (likely Angular) into my application. I was unable to incorporate it at this point but would certainly be interested in doing so in the future.
+If I had more time, I would have liked to try incorporating a front-end framework (likely Angular) into my application. I was unable to incorporate it at this point but would certainly be interested in doing so in the future.
 
 Given that my application was a fish tank themed application, I had thought it would be cool to include a bubble type effect where the bubbles rose in the background from within the main page jumbotron. Though I got close, I was not able to get the bubbles to remain fully inside the jumbotron in time so I ended up having to back off of the idea. I would like to try this again in the future. In addition, I had hoped to incoporate some sort of fish swimming animation but ran out of time.
 
-Finally, I would have liked to have given users the ability to add/upload a picture of their animal as an attribute. If I had had more time to figure it out, I think this would have been possible using Amazon Web Services.
+Finally, I would have liked to have given users the ability to add/upload a picture of their animal. If I had had more time to figure it out, I think this would have been possible using Amazon Web Services.
 
 ## [License](LICENSE)
 
