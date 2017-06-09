@@ -48,6 +48,15 @@ $(() => {
 })
 
 $(() => {
+  $(document.body).on('hide.bs.modal', function () {
+    $('body').css('padding-right', '0')
+  })
+  $(document.body).on('hidden.bs.modal', function () {
+    $('body').css('padding-right', '0')
+  })
+})
+
+$(() => {
   $(document).on('click', '#createtankbutton', function () {
     $('.createerror').text('')
     $('#create-tank-name').val('')

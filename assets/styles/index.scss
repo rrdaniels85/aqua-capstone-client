@@ -9,13 +9,8 @@ $red: #c00;
 
 body {
   font-family: 'Merriweather Sans', sans-serif;
-  overflow: auto;
 }
 
-/* unset bs3 setting */
-.modal-open {
- overflow: auto;
-}
 
 .img-responsive {
   max-width: 100%;
