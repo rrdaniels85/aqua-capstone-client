@@ -5,8 +5,7 @@
 This application is targeted at aquarium enthusiasts. It allows them, after signing in, to create multiple tanks with attributes. The user can then keep an inventory of the animals that they keep in their tanks (ex. fish, snails, etc.). This allows them to keep their aquariums more organized.
 
 ![alt text](http://imgur.com/lqL9lZF.png)
-![alt text](http://imgur.com/P9JjRwQ.png)
-![alt text](http://imgur.com/xNTMZDT.png)
+
 
 ## Application URL Section
 -   [Back-End Repository](https://github.com/rrdaniels85/aqua-capstone-api)
