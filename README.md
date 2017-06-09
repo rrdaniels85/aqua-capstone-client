@@ -8,7 +8,7 @@ This application is targeted at aquarium enthusiasts. It allows them, after sign
 ![alt text](http://imgur.com/P9JjRwQ.png)
 ![alt text](http://imgur.com/xNTMZDT.png)
 
-## Application Links
+## Application URL Section
 -   [Back-End Repository](https://github.com/rrdaniels85/aqua-capstone-api)
 -   [Deployed Client App](https://rrdaniels85.github.io/aqua-capstone-client/)
 -   [Deployed API](https://still-castle-88480.herokuapp.com/)
@@ -21,6 +21,13 @@ Install with `npm install`.
 -   [Bootstrap](http://getbootstrap.com)
 -   [Handlebars.js](http://handlebarsjs.com)
 
+## Technologies Used
+
+The front-end of this application was developed using JavaScript, HTML, CSS,
+Bootstrap and Handlebars. Boostrap was primarily used to create the layout and
+feel of the page and Handlebars templates were used to render various bits of
+data received from the API to the user.
+
 ## Wireframes
 
 ![alt text](http://i.imgur.com/HsYPU1J.jpg)
@@ -29,7 +36,12 @@ Install with `npm install`.
 
 [Link to Wireframes on Imgur](http://imgur.com/a/OL7fT)
 
+## Users
+
+In creating this application, I considered what my user would want. This application is primarily targeted at aquarium enthusiasts who keep a number of aquariums with many fish/animals in each aquarium. I knew that such a user would want a way to keep track of each individual tank and keep an inventory of the individual animals in each tank. This is particularly important when a user has a multitude of fish in each tank and it can become easy to lose track of the inhabitants or even count them as they are swimming around. This inspired my user stories which are listed below.
+
 ## User Stories
+
 MAIN
 1) As a user, I want to be able to successfully sign up and sign in so that I can use the application.
 2) As a user, I want to be able to sign out when I am done using the application so that I can exit my session.
@@ -45,6 +57,29 @@ MAIN
 STRETCH OBJECTIVE USER STORIES:
 11) As a user, I want to be able to add maintenance logs/notes about my tank and the animals in it so that I can track my activities and the animals in the tank.
 12) As a user, I want to be able to delete and update my maintenace logs/notes on my tanks so I can alter them if I so choose.
+
+## General Approach
+
+**Planning**
+Before I wrote any code, I had a brainstorming session where I wrote out possible ideas for my application and potential functionality. I then tried to consider what I actually thought I could
+successfully accomplish given the time constraints of project week. This helped me to keep my scope in
+check. Once I had decided on my main project goal, I created the user stories and wireframes. I then created a stretch goal for myself which I incorporated in my user stories and ERD. I indicated that this was a stretch goal that I could strive for if I had capacity over the course of the project.
+
+**Execution**
+As I had done in the past, I first focused on getting my API functional. My application required two resources. The first resource, tanks, was relatively straightforward. It was a single has_many/belongs_to relationship. I had done this in the past. As a result, I was able to get this functionality working relatively quickly. Once this was working, I created a basic front-end layout that allowed me to connect my client with the API and confirm that the tanks CRUD functionality was working correctly with the front-end.
+
+The bigger challenge came when I added the second table to the API. The relationships between my three resources were: a user has many tanks, and a tank has many animals. I had never done a second has_many relationship before. As a result, it took additional effort and experimentation to develop
+a controller that worked for my purposes for the animals resource. Once I successfully had that working, I then created a basic front end layout for animals and, like with tanks, confirmed the API was working correctly with the front-end.
+
+After I had also my CRUD functionality for my resources working as expected, I turned my attention to the UI. I used Bootsrap to provide a better layout and created handlebars templates to render my data to the
+user. After I felt comfortable with the UI of my application, I then spent some time testing out my application.
+
+## Unsolved Problems
+
+When I first began my project, I created a stretch goal of trying to create an additional resource of notes/maintenance logs that the user could keep for each tank. However, due to unexpected issues throughout the project, I simply ran out of time. If given more time, I would like to add this additional resource because I think it would be of value to the end user. It was definitely a struggle figuring out the controller for the second has_many relationship (tank to animals) but now that I have it figured out I think I could use that same basic format for the notes/maintenance logs.
+
+I also would have liked to have given users the ability to add a picture of their animal as an attribute. If I had had more time to figure it out, I think this would have been possible using Amazon Web Services.
+
 
 ## [License](LICENSE)
 
