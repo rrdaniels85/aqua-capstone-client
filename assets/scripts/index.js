@@ -30,11 +30,20 @@ $(() => {
   $('.loginbuttons').on('click', function () {
     $('.signinerror').text('')
     $('.signuperror').text('')
+    $('#sign-up-emai').val('')
+    $('#sign-up-password').val('')
+    $('#sign-up-password-confirmation').val('')
+    $('#sign-in-email').val('')
+    $('#sign-in-password').val('')
+    $('#signupsuccess').text('')
+  })
+})
+
+$(() => {
+  $('#passwordbutton').on('click', function () {
+    $('#old-password').val('')
+    $('#new-password').val('')
     $('.passworderror').text('')
-    $('#sign-in').find('input:text, input:password, input:password, select, textarea').val('')
-    $('#sign-up').find('input:text, input:password, input:password, select, textarea').val('')
-    $('#change-password').find('input:text, input:password, input:password, select, textarea').val('')
-    $('.signupsuccess').text('')
   })
 })
 

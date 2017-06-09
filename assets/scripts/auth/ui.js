@@ -8,7 +8,7 @@ const signUpSuccess = (data) => {
   store.user = data.user
   $('#signupmodal').modal('toggle')
   $('#signinmodal').modal('toggle')
-  $('.signupsuccess').text('You successfully signed up! Please sign in to continue.')
+  $('#signupsuccess').text('You successfully signed up! Please sign in to continue.')
 }
 
 const signUpFailure = () => {
