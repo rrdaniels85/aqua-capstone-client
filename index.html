@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Aquarium Tracker</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href="https://fonts.googleapis.com/css?family=Lakki+Reddy" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lato|Merriweather+Sans" rel="stylesheet">
+    </head>
+    <body>
+
+  <!-- BEGIN CAROUSEL -->
+      <div class="carousel slide carousel-fade" data-interval="10000" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+        <div class="item active"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        </div>
+      </div>
+  <!-- END CAROUSEL -->
+
+
+<!-- BEGIN NAV BAR -->
+      <nav class="navbar navbar-default navbar-fixed-top navbar-inverse user-view hidden">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            <div class="navbar-brand brand-title">Aquarium Tracker</div>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="blogActions nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" id="my-account" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> My Account <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <!-- <li><a href="#" data-toggle="modal" id="mytanksnav">My Aquariums</a></li> -->
+                  <li><a href="#" data-toggle="modal" id="passwordbutton" data-target="#newpasswordmodal">Change Password</a></li>
+                  <li><a href="#" data-toggle="modal" id="signoutmodbutton" data-target="#signoutmodal">Sign Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+      </nav>
+  <!-- END NAV BAR -->
+
+  <!-- BEGIN VISITOR PAGE JUMBOTRON -->
+<div class="jumbotron splash-jumbo container visitor-view">
+  <h1 class="display-3 expecto-jumbo-text">Aquarium Tracker</h1>
+  <br>
+  <p class="lead"></p>
+  <p class="lead">
+    <button type="button modalbutton" class="btn btn-info btn-large loginbuttons" data-toggle="modal" data-target="#signupmodal">Sign Up</button>
+    <button type="button modalbutton" class="btn btn-primary btn-large loginbuttons" data-toggle="modal" data-target="#signinmodal">Sign In</button>
+  </p>
+</div>
+<!-- END JUMBOTRON -->
+
+
+
+<!-- BEGIN VISITOR ABOUT SECTION -->
+<div class="row text-center visitor-view">
+<div class="col-sm-8 col-sm-offset-2">
+  <div class="about">
+  <h3 class="about-title">About the Application</h3>
+  <p class="about-section"> We seek to support aquarium and aquatic animal enthusiasts everywhere with this
+    innovative application. This application allows a user to monitor multiple aquariums and keep an inventory
+    of the aquatic life living in each tank.
+  </p>
+  <img class="img-responsive" alt="fish-image" src="https://i.imgur.com/FYn8kEu.jpg">
+  <hr>
+</div>
+</div>
+</div>
+<!-- END VISITOR ABOUT SECTION -->
+
+<br>
+<br>
+<br>
+
+<!-- ABOUT THE CREATOR-->
+<div class="row text-center visitor-view">
+<div class="col-sm-8 col-sm-offset-2">
+  <div class="about">
+  <h3 class="about-title">About the Creator</h3>
+  <p class="about-section"> Rachel Daniels is a web developer. She has had a number of pet fish
+    in her life over the years, from her first pet Abraham (the black goldfish), to her perpetually angry
+    betta fish, Spade. She never truly appreciated how much care went into these little creatures until
+    she got an aquarium as an adult.
+    <br>
+    <br> As a result, this project is dedicated to her parents who she wants
+    to thank for cleaning her aquarium for many, many, ... many years during her adolescence.
+  </p>
+  <hr>
+</div>
+</div>
+</div>
+<!-- END ABOUT THE CREATOR-->
+<br>
+<!-- TOP HANDLEBARS DIV-->
+<div class="container-fluid">
+<div id="handlebarsone">
+</div>
+</div>
+<!-- END TOP HANDLEBARS DIV -->
+
+<br>
+<br>
+<br>
+<!-- BOTTOM HANDLEBARS DIV-->
+<div id="handlebarstwo">
+</div>
+<!-- END BOTTOM HANDLEBARS DIV -->
+
+
+
+<!-- BEGIN MODALS!! -->
+
+<!-- SIGN UP MODAL -->
+  <div class="modal fade auth-modals" id="signupmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLongTitle">Begin Your Aquarium Management Journey- Sign Up!</h5>
+  </div>
+  <div class="modal-body">
+  <form id="sign-up">
+  <fieldset>
+    <legend>Sign Up!</legend>
+      <input name="credentials[email]" type="email" id="sign-up-emai" placeholder="Email">
+      <input name="credentials[password]" type="password" id="sign-up-password" placeholder="Password">
+      <input name="credentials[password_confirmation]" type="password" id="sign-up-password-confirmation" placeholder="Confirm Password">
+      <input type="submit" name="submit" value="Sign up!">
+  </fieldset>
+  </form>
+</div>
+<div class="modal-footer">
+<div class="signuperror"></div>
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+</div>
+</div>
+</div>
+</div>
+
+  <!-- SIGN IN MODAL -->
+  <div class="modal fade auth-modals" id="signinmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="signupsuccess"></h5>
+  </div>
+  <div class="modal-body">
+  <form id="sign-in">
+  <fieldset>
+    <legend>Sign in!</legend>
+      <input name="credentials[email]" type="email" id="sign-in-email" placeholder="Email">
+      <input name="credentials[password]" type="password" id="sign-in-password" placeholder="Password">
+      <input type="submit" name="submit" value="Sign in!">
+  </fieldset>
+  </form>
+</div>
+<div class="modal-footer">
+<div class="signinerror"></div>
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+</div>
+</div>
+</div>
+</div>
+
+    <!-- CHANGE PASSWORD Modal -->
+    <div class="modal fade auth-modals" id="newpasswordmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Change Your Password</h5>
+          </div>
+          <div class="modal-body">
+            <form id="change-password">
+            <fieldset>
+              <input type='password' name='passwords[old]' id ='old-password' placeholder='Old Password'>
+              <input type='password' name='passwords[new]' id ='new-password' placeholder='New Password'>
+              <input type="submit" name="submit" value="Change Password">
+          </fieldset>
+          </form>
+          </div>
+          <div class="modal-footer">
+            <div class="passworderror"></div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- SIGN OUT Modal -->
+  <div class="modal fade auth-modals" id="signoutmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Are you sure you want to leave?</h5>
+        </div>
+        <div class="modal-body">
+          <form id="sign-out">
+            <fieldset>
+              <input type="submit" name="submit" value="Sign out!">
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </body>
+</html>
